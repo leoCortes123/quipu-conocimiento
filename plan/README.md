@@ -36,8 +36,8 @@ La auditoría (§15) lo dice sin rodeos: **sin DEC-1 y DEC-2 el plan no se puede
 | DEC-5 · modelo normativo único | `invariante` vs `business_rule` |
 
 Se registran resueltas en `../memoria/decisiones/`, una por archivo. DEC-6, DEC-7 y DEC-8
-no bloquean el plan y además son decisiones de **método**, no de producto: su destino es
-`metodologia/`.
+no bloquean el plan y además son decisiones de **método**, no de producto: viven en
+`../../metodologia/decisiones/` como DEC-M2, DEC-M1 y DEC-M3.
 
 ## Convención
 
