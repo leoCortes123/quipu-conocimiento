@@ -23,7 +23,7 @@ marca por dónde empezar y evita releer los trece en cada sesión.
 | 02 | `02-especificacion-requisitos-y-norma.md` | ● | ○ | spec-driven y EARS ya están en el método; ambigüedad y contradicción son producto |
 | 03 | `03-arquitectura-planificacion-y-coordinacion.md` | ● | ● | multi-agente y coste ×15 es decisión de método; Git como sustrato ya lo es |
 | 04 | `04-contexto-memoria-y-codigo.md` | ○ | ● | **el hueco mayor del método**: ingeniería de contexto, decaimiento de gobierno, qué sobrevive al resumen |
-| 05 | `05-verificacion-evidencia-y-procedencia.md` | ● | ● | núcleo de las dos: para el producto es el runner de evidencia (DEC-3); para el método, `normativa/VALIDACION.md` |
+| 05 | `05-verificacion-evidencia-y-procedencia.md` | ● | ● | núcleo de las dos: para el producto es el runner de evidencia (DEC-3); para el método, `../../metodologia/normativa/VALIDACION.md` |
 | 06 | `06-gobierno-autoridad-y-seguridad.md` | ● | ○ | autoridad y permisos son producto; sandboxing por harness es método |
 | 07 | `07-ejecucion-observabilidad-y-evaluacion.md` | ● | ○ | máquinas de estado y trazas son producto; métricas de flota, método |
 | 08 | `08-taxonomia-de-fallos.md` | ○ | ● | **hueco del método**: hoy hay escalamiento, no recuperación por modo de fallo |
