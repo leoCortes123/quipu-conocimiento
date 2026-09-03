@@ -1,0 +1,1401 @@
+<!doctype html><html><head><!-- frame-runtime --><script>window.__FRAME_PREAMBLE={"v":1,"capabilities":{"artifact":"artifact.BYHii2AW.js","assets":"assets.8Gk803W0.js","comments":"comments.BiSa9uTt.js","db":"db.h-3sndFg.js","downloads":"downloads.Cqv48mdo.js","embed":"embed.eqL6deQM.js","endpoints":"endpoints.CfzSv5nM.js","mcp":"mcp.Bvma3qD7.js","network":"network.B5UA9Su4.js","permissions":"permissions.BNySkLV5.js","room":"room.VSdFwTE9.js","sample":"sample.BW2Uysoh.js","self":"artifact.BYHii2AW.js","user":"user.BpKav-Rf.js"},"transforms":"_transforms.DSB5x63f.js","comments":"_comments.CySkkG-P.js","translate":"_translate.5HCW4BJh.js","ldx":"_ldx.DYFNSryD.js"}</script><script>(function(){"use strict";var ce=["light","dark","system"],le=/^[A-Za-z0-9_-]{1,64}$/,Z=/^[a-zA-Z_:][a-zA-Z0-9_:.-]{0,127}$/,ue=new Set(["class","hidden","value","checked","style","title","alt","placeholder","lang","dir","role","tabindex","disabled","readonly","contenteditable","open","colspan","rowspan"]);function fe(e){const t=e.toLowerCase();return t.startsWith("data-")||t.startsWith("aria-")||ue.has(t)}var He="http://www.w3.org/1999/xhtml",de="http://www.w3.org/2000/svg",pe=new Set(["script","style","iframe","noscript","noframes","noembed","xmp","plaintext","template","title","textarea","object","embed"]),me=new Set(["script","style"]);function he(e){const t=e.localName.toLowerCase();return e.namespaceURI==="http://www.w3.org/1999/xhtml"?!pe.has(t):e.namespaceURI===de?!me.has(t):!1}function D(e,t){return e===t||(e===160||e===32)&&(t===160||t===32)}function _e(e,t){const r=e.length,n=t.length;let s=0;for(;s<r&&s<n&&D(e.charCodeAt(s),t.charCodeAt(s));)s++;let o=0;for(;o<r-s&&o<n-s&&D(e.charCodeAt(r-1-o),t.charCodeAt(n-1-o));)o++;return{p:s,s:o}}function ve(e,t){const r=e.firstChild;if(e.childNodes.length!==1||r===null||r.nodeType!==Node.TEXT_NODE){e.textContent=t;return}const n=r.data,s=n.length,o=t.length,{p:i,s:c}=_e(n,t);i===s&&c===0&&s===o||r.replaceData(i,s-i-c,t.slice(i,o-c));const m=r.data,d=e.ownerDocument.getSelection?.()??null,v=d!==null&&d.rangeCount>0&&(d.anchorNode===r||d.focusNode===r)?{anchor:d.anchorNode,anchorOffset:d.anchorOffset,focus:d.focusNode,focusOffset:d.focusOffset}:null;let p=-1,y=-1;for(let h=0;h<m.length&&h<t.length;h++){const E=m.charCodeAt(h),A=t.charCodeAt(h);E!==A&&D(E,A)&&(p<0&&(p=h),y=h)}const w=p>=0;if(w&&r.replaceData(p,y-p+1,t.slice(p,y+1)),w&&v!==null&&v.anchor!==null&&v.focus!==null)try{d.setBaseAndExtent(v.anchor,v.anchorOffset,v.focus,v.focusOffset)}catch{}}var ye=new Set(["html","head","body","frameset"]);function we(e){return e.namespaceURI==="http://www.w3.org/1999/xhtml"&&ye.has(e.localName)}function ge(e){if(e===null||typeof e!="object")return!1;const t=e;if(typeof t.target!="string"||!le.test(t.target)||t.text!==void 0&&typeof t.text!="string")return!1;if(t.attrsSet!==void 0){if(t.attrsSet===null||typeof t.attrsSet!="object")return!1;for(const[r,n]of Object.entries(t.attrsSet))if(!Z.test(r)||typeof n!="string")return!1}if(t.attrsRemoved!==void 0){if(!Array.isArray(t.attrsRemoved))return!1;for(const r of t.attrsRemoved)if(typeof r!="string"||!Z.test(r))return!1}return!0}function Ee(e,t){if(e===null||typeof e!="object")return!1;const{seq:r,elements:n}=e;if(typeof r!="number"||!Number.isSafeInteger(r)||!Array.isArray(n)||n.length===0||n.length>64)return!1;for(let s=0;s<n.length;s++)if(!t(n[s]))return!1;return!0}function be(e){return e===null||typeof e!="object"?!1:Ee(e.__frame_patch,ge)}function Ae(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_init;return t!==null&&typeof t=="object"}function Te(e){return e!==null&&typeof e=="object"&&e.__frame_size_poke===!0}function Re(e){if(e===null||typeof e!="object")return!1;const t=e.__frame_theme;if(t===null||typeof t!="object")return!1;const r=t.theme;return typeof r=="string"&&ce.includes(r)}var S=/^[\w.-]+\.js$/;function Se(e,t,r){return r?"inert":typeof t=="string"&&S.test(t)?e?[t]:"inert":e?"inert":"framed"}var We="frame_ldx_runtime",Ke="script#an-form";function Le(){return{post(e,t){parent.postMessage(e,t)},on(e){const t=r=>{r.source===parent&&e(r.data,r.origin,r.isTrusted)};return addEventListener("message",t),()=>removeEventListener("message",t)}}}function ke(){return{post:()=>{},on:()=>()=>{}}}var I="__frame_scroll",Pe=150,Oe=310,Ce=160,Me=3e4;function je(){let e=0,t=!1,r=!1,n=!1,s=0,o=null;const i=u=>{try{sessionStorage.setItem(I,JSON.stringify({y:u}))}catch{}},c=()=>{if(clearTimeout(e),o===null)return;const u=o;o=null,i(u)},m=()=>{if(t){t=!1;return}r=!0,o=scrollY,clearTimeout(e),e=setTimeout(c,Pe)};try{addEventListener("scroll",m,{passive:!0}),addEventListener("pagehide",c)}catch{}const d=()=>{let u;try{u=sessionStorage.getItem(I)}catch{return null}if(u===null)return null;let a;try{a=JSON.parse(u)}catch{a=null}const f=a?.y;if(!(typeof f=="number"&&Number.isFinite(f)&&f>=0)){try{sessionStorage.removeItem(I)}catch{}return null}return f};let v=!1;const p=u=>{try{const a=scrollY;scrollTo({top:u,left:0,behavior:"instant"}),s=u,n=!0,clearTimeout(e),o=null,i(u);const f=scrollY;f!==a&&(t=!0),f!==u&&!v&&(v=!0,addEventListener("load",()=>{try{if(scrollY===f){const b=d();p(b!==null?b:s)}}catch{}},{once:!0}))}catch{}},y=()=>{try{return!!location.hash}catch{return!0}};let w=!1;const h=()=>{try{if(w||innerWidth>Oe||innerHeight>Ce)return;w=!0;const u=Date.now(),a=()=>{try{removeEventListener("resize",a)}catch{}if(Date.now()-u>Me||r||y())return;const f=d();p(f!==null?f:s)};addEventListener("resize",a)}catch{}};let E=!1,A=!1;return{restore(){if(E||(E=!0,y()))return;const u=d();u!==null&&(p(u),h())},promoted(){if(A||(A=!0,y()))return;const u=d();u!==null?(p(u),h()):n&&p(s)}}}function Ne(e,t,r,n){let s=null;try{s=window.trustedTypes?.createPolicy("frame-runtime",{createScriptURL:m=>m})??null}catch{}const o=window.Worker,i=o?.prototype,c=Object.freeze({Worker:o,workerOn:i?.addEventListener,workerPost:i?.postMessage,workerTerminate:i?.terminate,fetch:window.fetch.bind(window),preventDefault:Event.prototype.preventDefault,policy:s,origins:t});r(e).then(m=>m?.bootTopLevel?m.bootTopLevel(c,n):n.settle()).catch(()=>n.settle())}var $e="modulepreload",qe=function(e){return"/"+e},Xe={},Be=function(t,r,n){let s=Promise.resolve();function o(i){const c=new Event("vite:preloadError",{cancelable:!0});if(c.payload=i,window.dispatchEvent(c),!c.defaultPrevented)throw i}return s.then(i=>{for(const c of i||[])c.status==="rejected"&&o(c.reason);return t().catch(o)})},De=window===top,J=Object.getOwnPropertyDescriptor(window,"claude"),O=Se(De,window.__FRAME_PREAMBLE?.topLevel,J?.writable===!1),U=typeof O=="object"&&O[0],_=U?ke():Le();(function(){const e=Object.defineProperty,t=globalThis,r=["RTCPeerConnection","webkitRTCPeerConnection","RTCDataChannel","RTCIceCandidate","RTCSessionDescription","RTCRtpSender","RTCRtpReceiver"];let n=0;for(let s=0;s<r.length;s++){const o=r[s];try{e(t,o,{value:void 0,writable:!1,configurable:!1})}catch{try{delete t[o]}catch{}try{e(t,o,{value:void 0,writable:!1,configurable:!0})}catch{}}typeof t[o]=="function"&&n++}if(n&&O==="framed")try{_.post({__frame_rtc_lockdown_failed:n},"*")}catch{}})();var Ie=1e4,Ue=2e3,Q=Object.freeze([...window.__FRAME_PREAMBLE?.origins??["https://claude.ai","https://preview.claude.ai"]]);function ee(e){for(const t of Q)if(t.endsWith(":*"))try{const r=new URL(e);if(`${r.protocol}//${r.hostname}:*`===t)return!0}catch{}else if(e===t)return!0;return!1}var C=Object.freeze({...window.__FRAME_PREAMBLE?.capabilities}),x=window.__FRAME_PREAMBLE?.transforms,F=window.__FRAME_PREAMBLE?.comments,z=window.__FRAME_PREAMBLE?.translate,H=window.__FRAME_PREAMBLE?.ldx;function L(e){return Be(()=>import("/_runtime/"+e),void 0)}function te(e,t){return{contract:e.contract,changes:new Set(e.changes??[]),flags:new Set(e.flags??[]),capabilities:e.capabilities??{},capBudgets:e.capBudgets??{},transforms:new Map,shellOrigin:t,mount:$,hooks:j,pipe:()=>({wrap:(r,n)=>(...s)=>{try{return n(...s)}catch(o){return Promise.reject(o)}}})}}var M=null,T=null;function re(e,t,r){try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!1,enumerable:!0})}catch{try{Object.defineProperty(e,t,{value:r,writable:!1,configurable:!0,enumerable:!0})}catch{}}}var W=!1,j={editBefore:null,edit:null};function xe(e,t,r=!1){const n=[];let s;if(r)try{j.editBefore?.(e)}catch{}for(const o of e.elements){const i=document.querySelector(`[data-id="${o.target}"]`);if(!i){s=o.target;break}if([...Object.keys(o.attrsSet??{}),...o.attrsRemoved??[]].some(c=>!fe(c))){s=o.target;break}if(o.text!==void 0&&(!he(i)||we(i))){s=o.target;break}for(const[c,m]of Object.entries(o.attrsSet??{}))if(!oe(i,c)){try{i.setAttribute(c,m)}catch{}ne(i,c,m)}for(const c of o.attrsRemoved??[])oe(i,c)||(i.removeAttribute(c),ne(i,c,null));typeof o.text=="string"&&ve(i,o.text),n.push(o.target)}if(r)try{j.edit?.(e.seq,n,s)}catch{}if(s!==void 0){_.post({__frame_patch_miss:{seq:e.seq}},t);return}try{document.dispatchEvent(new CustomEvent("claude:edit",{detail:{seq:e.seq,targets:n}}))}catch{}}function ne(e,t,r){if(!(e instanceof HTMLInputElement))return;const n=t.toLowerCase();n==="checked"?e.checked=r!==null:n==="value"&&e.type!=="file"&&(e.value=r??"")}function oe(e,t){const r=t.toLowerCase(),n=e;return r==="data-id"||(r==="value"||r==="checked")&&(n.__artifactSecret===!0||/^(password|hidden|file)$/.test(n.type??"")||/(^|\s)(cc-|one-time-code|current-password|new-password)/i.test(`${e.getAttribute("autocomplete")??""} ${n.autocomplete??""}`))}function se(e){const t=document.documentElement;e==="light"||e==="dark"?(t.dataset.theme=e,t.style.colorScheme=e,W=!0):W&&(delete t.dataset.theme,t.style.colorScheme="",W=!1)}var N=new Map;function Fe(){let e;const t={u:new Promise(r=>{e=r}),r:r=>{t.done=!0,e(r)},done:!1,nulled:!1};return t}function K(){for(const e of N.values())e.done||(e.nulled=!0,e.r(null))}var ze=Object.freeze(Object.assign(Object.create(null),{call:Function.prototype.call,apply:Function.prototype.apply,bind:Function.prototype.bind})),$=(e,t)=>{const r=N.get(e);if(!r||r.done){r?.nulled&&T&&_.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:e}},T);return}const n=typeof t=="function"?Object.setPrototypeOf(t,ze):Object.assign(Object.create(null),t);typeof n.then=="function"&&delete n.then,r.r(Object.freeze(n))};function ae(){const e=J?.value??{};re(window,"claude",e);for(const t of Object.keys(C)){if(e[t]!==void 0){re(e,t,e[t]);continue}N.set(t,Fe())}if(e.use===void 0){const t=r=>{if(typeof r!="string"||!Object.hasOwn(C,r))return Promise.resolve(null);const n=N.get(r);return n?n.u:Promise.resolve(e[r]??null)};try{Object.defineProperty(e,"use",{value:t,writable:!0,configurable:!0,enumerable:!1})}catch{}}}if(O==="framed"){const e=x&&S.test(x)?L(x).catch(()=>{}):Promise.resolve(void 0),t=a=>{if(a.type==="auxclick"&&a.button!==1)return;const f=a.target,b=f&&f.closest?f.closest("a[href],area[href]"):null;if(!b)return;const P=b.getAttribute("href");if(!P)return;let R;try{R=new URL(P,document.baseURI)}catch{return}if((R.protocol==="http:"||R.protocol==="https:")&&R.origin!==location.origin){a.preventDefault();const k=(b.getAttribute("target")??"").toLowerCase(),g=a.type==="auxclick"||a.metaKey||a.ctrlKey||a.shiftKey||a.altKey||!["","_self","_top","_parent"].includes(k);_.post({__frame_nav:!0,url:R.href,newTab:g},"*")}};addEventListener("click",t,!0),addEventListener("auxclick",t,!0);const r={},n=a=>{a.isTrusted&&(r.pointer=!0)},s=a=>{a.isTrusted&&(r.click=!0)};addEventListener("pointermove",n,{capture:!0,passive:!0}),addEventListener("click",s,{capture:!0,passive:!0}),e.then(a=>{a?.wireNav&&(a.wireNav(),removeEventListener("click",t,!0),removeEventListener("auxclick",t,!0),removeEventListener("pointermove",n,!0),removeEventListener("click",s,!0),a.wireEngagement?.(r))});let o=null;try{o=je()}catch{}ae();let i=null,c=null,m=0;const d=_.on((a,f)=>{ee(f)&&Ae(a)&&(i=a.__frame_init,T=f,d(),clearTimeout(m),c?.())});_.post({__frame_connect:!0},"*");const v=setTimeout,p=clearTimeout;let y=0;const w=()=>{try{_.post({__frame_alive:!0},"*")}catch{}y=v(w,Ue)},h=()=>p(y);w(),addEventListener("load",h,{once:!0});const E=new Promise(a=>{c=a,m=setTimeout(()=>{d(),a()},Ie)}),A=document.readyState==="loading"?new Promise(a=>document.addEventListener("DOMContentLoaded",()=>a(),{once:!0})):Promise.resolve();A.then(()=>{try{o?.restore()}catch{}});const u={cb:null};_.on((a,f)=>{if(ee(f)&&Te(a)){try{o?.promoted()}catch{}u.cb?.()}}),E.then(async()=>{if(!i||!T){K();return}se(i.theme);const a=T;let f=!1,b=!1;_.on((l,X,B)=>{if(X!==a)return;Re(l)&&se(l.__frame_theme.theme),be(l)&&xe(l.__frame_patch,a,B);const Y=l?.__fc_mode;Y&&typeof Y=="object"&&!f&&F&&S.test(F)&&(f=!0,L(F).then(V=>V.install?.(a,Y.on===!0)).catch(()=>{}));const G=l?.__ft_cmd;G&&typeof G=="object"&&!b&&z&&S.test(z)&&(b=!0,L(z).then(V=>V.install?.(a,G)).catch(()=>{}))});const P=Object.keys(i.capabilities??{}).filter(l=>Object.hasOwn(C,l)).map(l=>[l,C[l]]).filter(l=>typeof l[1]=="string"&&S.test(l[1])),R=await Promise.allSettled(P.map(([,l])=>L(l))),k=await e,g=T;if(k?.buildBoot||_.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},g),k?.buildBoot)try{M=k.buildBoot(i,k.TRANSFORMS??{},{shellOrigin:g,mount:$,hooks:j},l=>_.post({__frame_cap_telemetry:l},g))}catch{_.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:"_transforms"}},g),M=te(i,g)}else M=te(i,g);const q=l=>_.post({__frame_cap_telemetry:{kind:"cap-load-error",cap:l}},g),ie=M;R.forEach((l,X)=>{const B=P[X][0];if(l.status!=="fulfilled"){q(B);return}try{l.value?.install?.(ie)}catch{q(B)}}),K(),await A,h(),_.post({__frame_ready:!0},T),e.then(l=>l?.installSizeReporter?.(g,u)),ie.flags.has("frame_ldx_runtime")&&H&&S.test(H)&&document.querySelector("script#an-form")&&L(H).then(l=>l?.boot?.()).catch(()=>!1).then(l=>{l!==!0&&q("_ldx")})})}else U&&(ae(),Ne(U,Q,L,{settle:K,mount:$}))})();</script><!-- /frame-runtime --><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found]){display:none!important}</style></head><body>
+<title>Auditoría estratégica de Quipu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600;700&display=swap">
+<style>
+:root{
+  --ground:#EDF0F3;
+  --surface:#FCFDFE;
+  --surface-2:#F4F6F8;
+  --ink:#16202B;
+  --ink-2:#41525F;
+  --ink-3:#6C7C89;
+  --line:#D3DAE1;
+  --line-2:#E3E8ED;
+  --indigo:#2D4A7C;
+  --indigo-soft:#E5EAF3;
+  --cochineal:#9E2028;
+  --cochineal-soft:#F6E4E5;
+  --ochre:#8A5D0B;
+  --ochre-soft:#F7EDDA;
+  --verdigris:#1B6355;
+  --verdigris-soft:#E0EDEA;
+  --shadow:0 1px 2px rgba(22,32,43,.06),0 8px 24px -12px rgba(22,32,43,.18);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E141A;
+    --surface:#151D25;
+    --surface-2:#1B242D;
+    --ink:#E3EAF1;
+    --ink-2:#AEBDC9;
+    --ink-3:#8494A1;
+    --line:#2B3742;
+    --line-2:#222D37;
+    --indigo:#89ADE4;
+    --indigo-soft:#1B2839;
+    --cochineal:#EE8189;
+    --cochineal-soft:#2E1A1D;
+    --ochre:#DCA845;
+    --ochre-soft:#2B2317;
+    --verdigris:#57BAA5;
+    --verdigris-soft:#152A27;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0E141A;
+  --surface:#151D25;
+  --surface-2:#1B242D;
+  --ink:#E3EAF1;
+  --ink-2:#AEBDC9;
+  --ink-3:#8494A1;
+  --line:#2B3742;
+  --line-2:#222D37;
+  --indigo:#89ADE4;
+  --indigo-soft:#1B2839;
+  --cochineal:#EE8189;
+  --cochineal-soft:#2E1A1D;
+  --ochre:#DCA845;
+  --ochre-soft:#2B2317;
+  --verdigris:#57BAA5;
+  --verdigris-soft:#152A27;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px 96px}
+
+/* ── cabecera ───────────────────────────────────────────── */
+.masthead{
+  border-bottom:2px solid var(--ink);
+  padding:52px 0 22px;
+  margin-bottom:40px;
+}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--indigo);font-weight:500;margin:0 0 14px;
+}
+h1{
+  font-family:"IBM Plex Serif",Georgia,serif;
+  font-weight:700;font-size:clamp(2.1rem,5.2vw,3.4rem);
+  line-height:1.06;letter-spacing:-.022em;text-wrap:balance;
+  margin:0 0 16px;
+}
+.standfirst{
+  font-size:clamp(1.02rem,1.9vw,1.18rem);
+  color:var(--ink-2);max-width:64ch;margin:0 0 26px;line-height:1.55;
+}
+.meta{
+  display:flex;flex-wrap:wrap;gap:8px 28px;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;color:var(--ink-3);
+}
+.meta b{color:var(--ink-2);font-weight:500}
+
+/* ── layout de lectura ──────────────────────────────────── */
+.layout{display:grid;grid-template-columns:1fr;gap:0}
+@media (min-width:1000px){
+  .layout{grid-template-columns:186px minmax(0,1fr);gap:56px;align-items:start}
+  .toc{position:sticky;top:24px}
+}
+.toc{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;display:none}
+@media (min-width:1000px){.toc{display:block}}
+.toc-title{letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);margin:0 0 12px;font-size:10.5px}
+.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.toc a{
+  display:grid;grid-template-columns:22px 1fr;gap:6px;
+  color:var(--ink-2);text-decoration:none;padding:3px 0;line-height:1.35;
+  border-left:2px solid transparent;padding-left:10px;margin-left:-12px;
+}
+.toc a:hover{color:var(--indigo);border-left-color:var(--indigo)}
+.toc a span:first-child{color:var(--ink-3)}
+.toc a:focus-visible{outline:2px solid var(--indigo);outline-offset:2px;border-radius:2px}
+
+main{min-width:0}
+
+/* ── secciones ──────────────────────────────────────────── */
+section{margin:0 0 68px;scroll-margin-top:20px}
+.sec-head{
+  display:flex;align-items:baseline;gap:14px;
+  border-top:1px solid var(--ink);padding-top:14px;margin-bottom:24px;
+}
+.sec-num{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12px;font-weight:500;color:var(--indigo);
+  letter-spacing:.06em;flex:none;padding-top:5px;
+}
+h2{
+  font-family:"IBM Plex Serif",Georgia,serif;
+  font-weight:600;font-size:clamp(1.4rem,3vw,1.86rem);
+  line-height:1.16;letter-spacing:-.014em;margin:0;text-wrap:balance;
+}
+h3{
+  font-family:"IBM Plex Sans",sans-serif;font-weight:600;
+  font-size:1.03rem;letter-spacing:-.005em;
+  margin:34px 0 12px;color:var(--ink);
+}
+h4{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500;margin:26px 0 10px;
+}
+p{margin:0 0 15px;max-width:70ch}
+ul,ol{margin:0 0 15px;padding-left:20px;max-width:70ch}
+li{margin-bottom:7px}
+li::marker{color:var(--ink-3)}
+strong{font-weight:600}
+a{color:var(--indigo)}
+code,.mono{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:.875em;
+}
+p code,li code,td code{
+  background:var(--surface-2);border:1px solid var(--line-2);
+  border-radius:3px;padding:.08em .32em;color:var(--ink);
+}
+
+/* ── etiquetas de evidencia ─────────────────────────────── */
+.tag{
+  display:inline-block;font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:10px;letter-spacing:.1em;font-weight:600;text-transform:uppercase;
+  padding:2px 6px;border-radius:2px;vertical-align:.12em;white-space:nowrap;
+}
+.t-hecho{background:var(--verdigris-soft);color:var(--verdigris);border:1px solid color-mix(in srgb,var(--verdigris) 30%,transparent)}
+.t-inf{background:var(--indigo-soft);color:var(--indigo);border:1px solid color-mix(in srgb,var(--indigo) 30%,transparent)}
+.t-rec{background:var(--ochre-soft);color:var(--ochre);border:1px solid color-mix(in srgb,var(--ochre) 34%,transparent)}
+.t-desc{background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line)}
+
+.claim{
+  display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;
+  padding:13px 0;border-bottom:1px solid var(--line-2);align-items:start;
+}
+.claim:first-of-type{border-top:1px solid var(--line-2)}
+.claim > div:last-child{max-width:66ch}
+.claim p{margin:0}
+.claim p + p{margin-top:8px}
+@media (max-width:620px){
+  .claim{grid-template-columns:1fr;gap:6px}
+}
+
+/* ── veredicto ──────────────────────────────────────────── */
+.verdict{
+  background:var(--surface);border:1px solid var(--line);
+  border-top:3px solid var(--cochineal);
+  border-radius:2px;padding:26px 28px;margin:0 0 44px;box-shadow:var(--shadow);
+}
+.verdict h2{font-size:1.28rem;margin:0 0 4px}
+.verdict > p:first-of-type{color:var(--ink-2);margin-bottom:20px}
+.findings{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0;max-width:none}
+.findings li{
+  display:grid;grid-template-columns:26px minmax(0,1fr);gap:14px;
+  padding:14px 0;border-top:1px solid var(--line-2);margin:0;
+}
+.findings li:first-child{border-top:none;padding-top:4px}
+.f-num{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;
+  color:var(--cochineal);font-weight:600;padding-top:3px;
+}
+.f-body{max-width:72ch}
+.f-title{font-weight:600;display:block;margin-bottom:2px}
+.f-body span.sub{color:var(--ink-2);font-size:.945rem}
+
+/* ── tablas ─────────────────────────────────────────────── */
+.tbl-wrap{overflow-x:auto;margin:0 0 18px;border:1px solid var(--line);border-radius:2px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:600px}
+thead th{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500;text-align:left;
+  padding:11px 14px;border-bottom:1px solid var(--line);
+  background:var(--surface-2);white-space:nowrap;
+}
+tbody td{padding:11px 14px;border-bottom:1px solid var(--line-2);vertical-align:top;line-height:1.5}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:var(--surface-2)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace;white-space:nowrap}
+td.mono-cell{font-family:"IBM Plex Mono",monospace;font-size:12.5px;white-space:nowrap}
+caption{
+  caption-side:bottom;text-align:left;padding:10px 14px;
+  font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line-2);
+}
+
+/* ── píldoras de estado ─────────────────────────────────── */
+.pill{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;
+  font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:2px 7px;border-radius:10px;white-space:nowrap;
+}
+.p-crit{background:var(--cochineal);color:var(--surface)}
+:root[data-theme="dark"] .p-crit,
+:root:not([data-theme="light"]) .p-crit{color:#160B0C}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .p-crit{color:#fff}}
+.p-alta{background:var(--ochre-soft);color:var(--ochre);border:1px solid color-mix(in srgb,var(--ochre) 40%,transparent)}
+.p-media{background:var(--indigo-soft);color:var(--indigo);border:1px solid color-mix(in srgb,var(--indigo) 34%,transparent)}
+.p-baja{background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line)}
+.p-ok{background:var(--verdigris-soft);color:var(--verdigris);border:1px solid color-mix(in srgb,var(--verdigris) 34%,transparent)}
+
+/* ── bloques destacados ─────────────────────────────────── */
+.callout{
+  border-left:3px solid var(--indigo);background:var(--surface);
+  padding:16px 20px;margin:0 0 20px;border-radius:0 2px 2px 0;
+  border-top:1px solid var(--line-2);border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);
+}
+.callout.warn{border-left-color:var(--cochineal)}
+.callout.good{border-left-color:var(--verdigris)}
+.callout p:last-child{margin-bottom:0}
+.callout h4{margin-top:0}
+
+.quote{
+  font-family:"IBM Plex Serif",Georgia,serif;font-size:1.06rem;line-height:1.5;
+  color:var(--ink);border-left:2px solid var(--cochineal);
+  padding:2px 0 2px 18px;margin:0 0 16px;max-width:62ch;
+}
+.quote cite{
+  display:block;font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+  font-style:normal;color:var(--ink-3);margin-top:8px;letter-spacing:.03em;
+}
+
+/* ── métrica de verificación ────────────────────────────── */
+.probes{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);
+  border-radius:2px;overflow:hidden;margin:0 0 20px;
+}
+.probe{background:var(--surface);padding:14px 16px}
+.probe dt{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:6px;
+}
+.probe dd{
+  margin:0;font-family:"IBM Plex Mono",monospace;font-size:15px;
+  font-weight:500;font-variant-numeric:tabular-nums;color:var(--ink);line-height:1.3;
+}
+.probe dd small{display:block;font-size:11.5px;color:var(--ink-2);font-weight:400;margin-top:3px;letter-spacing:0}
+
+/* ── diagrama ───────────────────────────────────────────── */
+figure{margin:0 0 20px}
+.fig-body{
+  overflow-x:auto;background:var(--surface);
+  border:1px solid var(--line);border-radius:2px;padding:20px;
+}
+figcaption{font-size:12.5px;color:var(--ink-3);margin-top:9px;max-width:70ch}
+svg{display:block;max-width:100%;height:auto;min-width:660px}
+.n-box{fill:var(--surface-2);stroke:var(--line);stroke-width:1}
+.n-box-crit{fill:var(--cochineal-soft);stroke:var(--cochineal);stroke-width:1.4}
+.n-box-alta{fill:var(--ochre-soft);stroke:var(--ochre);stroke-width:1.2}
+.n-code{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;fill:var(--ink)}
+.n-name{font-family:"IBM Plex Sans",sans-serif;font-size:12px;fill:var(--ink-2)}
+.n-edge{stroke:var(--ink-3);stroke-width:1.3;fill:none}
+.n-arrow{fill:var(--ink-3)}
+.n-note{font-family:"IBM Plex Mono",monospace;font-size:10.5px;fill:var(--ink-3);letter-spacing:.05em}
+
+/* ── cierre ─────────────────────────────────────────────── */
+.closing{
+  border-top:2px solid var(--ink);margin-top:56px;padding-top:22px;
+  font-size:12.5px;color:var(--ink-3);font-family:"IBM Plex Mono",monospace;
+  line-height:1.7;
+}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">Auditoría técnico-estratégica · 2026-09-01</p>
+  <h1>Auditoría estratégica de Quipu</h1>
+  <p class="standfirst">
+    Qué está construido, qué es correcto, qué está desconectado y qué debería hacerse a
+    continuación — contrastado contra el código, la base de datos viva y el comportamiento
+    real, no contra la documentación.
+  </p>
+  <div class="meta">
+    <span><b>Alcance</b> QUIPU_ENTERPRISE · sistema-a · developTool · chasqui_n8n</span>
+    <span><b>Método</b> plan → metodología → código → comportamiento → necesidad futura</span>
+    <span><b>Contraste</b> Informe estratégico externo</span>
+  </div>
+</header>
+
+<div class="verdict">
+  <p class="eyebrow" style="margin-bottom:6px">Veredicto</p>
+  <h2>El motor es real. Lo que impone no es lo que el producto promete.</h2>
+  <p>
+    Quipu tiene un núcleo de gobernanza de calidad poco común y su tesis sigue siendo
+    correcta. Pero cinco hallazgos medidos cambian el orden del roadmap.
+  </p>
+  <ol class="findings">
+    <li><span class="f-num">01</span><span class="f-body">
+      <span class="f-title">La evidencia nunca se verifica: se declara.</span>
+      <span class="sub">Quipu no ejecuta nada — cero <code>Process</code>, <code>exec</code> o <code>shell_exec</code> en todo <code>app/</code>. <code>add_evidence</code> acepta un <code>TEXT</code> que el agente pega. El gate cuenta filas del tipo correcto, no hechos. La parte mecánica termina justo donde empieza la verificación.</span>
+    </span></li>
+    <li><span class="f-num">02</span><span class="f-body">
+      <span class="f-title">La capa normativa (F1) no está conectada a la ejecución.</span>
+      <span class="sub">El payload de <code>claim_block</code> no lleva ni un invariante, ni una decisión, ni una regla. <code>block_rule</code> y <code>rule_implementation</code> son tablas que ninguna línea del código lee ni escribe. Detectar una contradicción es voluntad del agente, no un gate.</span>
+    </span></li>
+    <li><span class="f-num">03</span><span class="f-body">
+      <span class="f-title">La cadena de gobierno no alcanza a un proyecto adoptado.</span>
+      <span class="sub"><code>cambio_ambito()</code> llega a los criterios de un bloque sólo por <code>feature.cambio_id</code>, y todo lo adoptado nace con <code>cambio_id NULL</code>. Es exactamente el caso brownfield que el propio análisis externo señala como principal ventaja competitiva.</span>
+    </span></li>
+    <li><span class="f-num">04</span><span class="f-body">
+      <span class="f-title">La frontera humano/agente está abierta en el perímetro.</span>
+      <span class="sub"><code>POST /api/auth/session</code> emite un token de <code>human_admin</code> sin credencial alguna — verificado en la instancia viva. Los triggers de Postgres exigen correctamente un humano; el perímetro deja que cualquiera lo sea.</span>
+    </span></li>
+    <li><span class="f-num">05</span><span class="f-body">
+      <span class="f-title">Cero dogfooding: Quipu no gobierna ni su propio desarrollo.</span>
+      <span class="sub">La base viva tiene <code>necesidad 0 · cambio 0 · requisito 0 · decision 0 · invariante 0 · task 0 · evidence 0</code>. F0 y F1 se construyeron sobre markdown, bash y un ledger JSON. La metodología que sí funciona vive fuera del producto.</span>
+    </span></li>
+  </ol>
+</div>
+
+<h4>Base de evidencia de esta auditoría</h4>
+<dl class="probes">
+  <div class="probe"><dt>CI api reejecutado</dt><dd>562 <small>tests, 3408 aserciones, exit 0, 216 s</small></dd></div>
+  <div class="probe"><dt>CI web reejecutado</dt><dd>73 <small>tests, 20 ficheros, exit 0, 10 s</small></dd></div>
+  <div class="probe"><dt>Base de datos viva</dt><dd>118 <small>tablas · 53 funciones · 49 triggers</small></dd></div>
+  <div class="probe"><dt>Superficie de agente</dt><dd>46 <small>tools MCP · 128 rutas REST</small></dd></div>
+  <div class="probe"><dt>Rutas con guardia de capacidad</dt><dd>4 / 128 <small>sólo aprobar, promover, resolver</small></dd></div>
+  <div class="probe"><dt>Trabajo real en la base</dt><dd>0 <small>cambios, requisitos, decisiones, evidencias</small></dd></div>
+</dl>
+<p style="font-size:13.5px;color:var(--ink-3);max-width:70ch">
+  Además: lectura completa de las 62 migraciones, los 29 servicios de <code>app/Protocol</code>,
+  las 46 tools MCP, las 5 capabilities OpenSpec, el paquete <code>sistema-a</code> con su ledger
+  de 71 checkpoints, y el expediente <code>P-010</code>/<code>PROCESO-002</code> de Chasqui —
+  la única auditoría previa hecha desde fuera, y la que ya midió lo mismo el 2026-08-28.
+</p>
+
+<div class="layout">
+  <nav class="toc" aria-label="Índice">
+    <p class="toc-title">Contenido</p>
+    <ol>
+      <li><a href="#s1"><span>1</span><span>Estado actual</span></a></li>
+      <li><a href="#s2"><span>2</span><span>Diagnóstico del core</span></a></li>
+      <li><a href="#s3"><span>3</span><span>Gap analysis</span></a></li>
+      <li><a href="#s4"><span>4</span><span>Cambios sobre lo construido</span></a></li>
+      <li><a href="#s5"><span>5</span><span>Roadmap revisado</span></a></li>
+      <li><a href="#s6"><span>6</span><span>Prioridades</span></a></li>
+      <li><a href="#s7"><span>7</span><span>Dependencias y orden</span></a></li>
+      <li><a href="#s8"><span>8</span><span>Qué no desarrollar</span></a></li>
+      <li><a href="#s9"><span>9</span><span>Criterios de cierre</span></a></li>
+      <li><a href="#s10"><span>10</span><span>Arquitectura objetivo</span></a></li>
+      <li><a href="#s11"><span>11</span><span>Riesgos del roadmap actual</span></a></li>
+      <li><a href="#s12"><span>12</span><span>Qué hacer ahora</span></a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+  <!-- ══════════ 1 ══════════ -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Estado actual de Quipu</h2></div>
+
+    <p>
+      Lo primero que hay que decir es que el proyecto se describe a sí mismo con honestidad.
+      Reejecuté el CI completo y los números coinciden exactamente con lo que declara
+      <code>ESTADO/ESTADO.md</code>: 562 tests, 3408 aserciones, phpstan nivel 8 sin errores,
+      pint sobre 342 ficheros. En un repositorio donde casi todo lo demás que voy a decir es
+      crítico, eso importa: <strong>la documentación de estado no miente</strong>, y eso hace
+      utilizable todo lo que el equipo ya ha escrito.
+    </p>
+
+    <h3>Lo que existe, medido</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Capa</th><th>Tamaño</th><th>Madurez</th><th>Nota verificada</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Protocol Engine</b> (Postgres)</td>
+            <td class="mono-cell">62 migr · 53 fn · 49 trg · 48 CHECK</td>
+            <td><span class="pill p-ok">Producción</span></td>
+            <td>Gates reales, no convención. <code>is_block_closeable</code> con 4 puertas y <code>block_gate_report</code> que dice qué falta y cuánto.</td>
+          </tr>
+          <tr>
+            <td><b>Cadena de demanda</b></td>
+            <td class="mono-cell">necesidad→cambio→requisito→enlace→firma</td>
+            <td><span class="pill p-ok">Completa</span></td>
+            <td>Anclaje, grafo de estados como dato, sellado de enlaces, firmas humanas, segregación de funciones, vía rápida con deuda y plazo.</td>
+          </tr>
+          <tr>
+            <td><b>Cadena de decisión</b> (F1)</td>
+            <td class="mono-cell">dominio · decision · supersede · invariante · contradiccion</td>
+            <td><span class="pill p-alta">Completa, desconectada</span></td>
+            <td>Modelo excelente: DAG sin ciclos, <code>confirmado|inferido</code> con evidencia obligatoria, congelación por contradicción. Sin UI y sin llegar al trabajo.</td>
+          </tr>
+          <tr>
+            <td><b>Motor de sospecha</b></td>
+            <td class="mono-cell">huella SHA-256 + propagación por sentencia</td>
+            <td><span class="pill p-ok">Producción</span></td>
+            <td>Detecta y propaga obsolescencia cuando cambia contenido sustantivo. Benchmarkeado. Es un motor de <i>knowledge freshness</i> ya construido.</td>
+          </tr>
+          <tr>
+            <td><b>Interfaz de agente</b></td>
+            <td class="mono-cell">46 tools · MCP HTTP + STDIO</td>
+            <td><span class="pill p-alta">Amplia, sin foco</span></td>
+            <td>Un solo motor bajo dos transportes. Sin tool de aprobación, con test que lo vigila. 46 tools ya excede el presupuesto útil de un agente.</td>
+          </tr>
+          <tr>
+            <td><b>Web UI</b></td>
+            <td class="mono-cell">33 pantallas · ~14.800 líneas · 73 tests</td>
+            <td><span class="pill p-alta">Parcial</span></td>
+            <td>Cubre demanda, bloques, traza, verificación, equipo. <b>No cubre decisiones, invariantes ni contradicciones</b> — los tres actos exclusivamente humanos de F1.</td>
+          </tr>
+          <tr>
+            <td><b>Capa de diseño</b></td>
+            <td class="mono-cell">~10 tablas: endpoint, screen, component…</td>
+            <td><span class="pill p-baja">Sobredimensionada</span></td>
+            <td>Modela la UI como datos. Cero filas en la base viva. Apuesta anterior a que los agentes leyeran el código.</td>
+          </tr>
+          <tr>
+            <td><b>Adopción / bootstrap</b></td>
+            <td class="mono-cell">2 motores + catálogo de entrevista (621 líneas)</td>
+            <td><span class="pill p-alta">Funcional, aislada</span></td>
+            <td>Importa un proyecto existente e inventaría su línea base. Pero lo adoptado no puede después ser gobernado (§4).</td>
+          </tr>
+          <tr>
+            <td><b>Metodología</b> (<code>sistema-a</code>)</td>
+            <td class="mono-cell">15 reglas EARS · 6 scripts · ledger de 71 checkpoints</td>
+            <td><span class="pill p-ok">La pieza más madura</span></td>
+            <td>Repositorio git propio, cuatro capas, contrato de checkpoint validado mecánicamente. <b>Vive fuera del producto.</b></td>
+          </tr>
+        </tbody>
+        <caption>Medido el 2026-09-01 contra el árbol de trabajo, la base de datos viva y el CI reejecutado.</caption>
+      </table>
+    </div>
+
+    <h3>Lo que no existe</h3>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div><p>
+        No hay dispatcher, ni tabla <code>sesion_agente</code>, ni tools de ciclo de sesión, ni
+        heartbeats. FLOTA — los siete roles, los niveles L1–L4, los presupuestos BATS — es
+        íntegramente <b>manual</b>: sesiones que un humano lanza y coordina. Los cuatro comandos
+        artisan que existen son <code>quipu:adoptar</code>, <code>quipu:export</code>,
+        <code>quipu:index</code> y <code>quipu:token</code>.
+      </p></div>
+    </div>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div><p>
+        El gasto total de la flota en toda su historia es <b>$0,042914</b>, sobre 13 turnos
+        medidos. El trabajo real lo hacen las sesiones de Claude Code del humano, que no están
+        instrumentadas — <code>bin/metricas.sh</code> quedó ciego tras el port del 26-08.
+        Cualquier conclusión sobre el rendimiento de la flota es, hoy, <span class="tag t-desc">Desconocido</span>.
+      </p></div>
+    </div>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div><p>
+        Nada de F3 (verificación reforzada) existe en código: no hay <code>mutation_score</code>,
+        ni <code>suite_diff</code>, ni <code>env_limpio</code>, ni meta-evaluación de jueces. El
+        catálogo <code>lookup_evidence_type</code> tiene 12 tipos, todos declarativos.
+      </p></div>
+    </div>
+
+    <h3>La brecha entre lo declarado y lo desplegado</h3>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div>
+        <p>
+          La migración <code>2026_08_26_120000_gobierno_contradiccion</code> figura como aplicada
+          (batch 7) en la tabla <code>migrations</code>, pero la función
+          <code>fn_contradiccion_mismo_proyecto</code> y su trigger <b>no existen en la base
+          viva</b>. La migración se editó después de aplicarse — está documentado en su propio
+          docblock, y contradice la regla 11 de la CONSTITUCIÓN.
+        </p>
+        <p>
+          La consecuencia estratégica supera al incidente: <b>el esquema desplegado no coincide
+          con la fuente de verdad, y nada lo detecta</b>. Para un producto cuya tesis entera es
+          «la base manda», eso es el fallo de categoría más barato de arreglar y más caro de
+          descubrir tarde.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 2 ══════════ -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Diagnóstico del core</h2></div>
+
+    <p>
+      La tesis de Quipu es que <i>el protocolo es mecánico, no una convención</i>. Verificado:
+      lo es — <b>para la forma del flujo de trabajo</b>. No lo es para las tres cosas que deciden
+      si el desarrollo agentic mantiene la coherencia de un proyecto.
+    </p>
+
+    <h3>Lo que es arquitectónicamente correcto y debe preservarse intacto</h3>
+    <ul>
+      <li><b>Las reglas viven en Postgres.</b> No es una preferencia de implementación: es lo que hace que un <code>UPDATE</code> directo desde psql reciba el mismo rechazo que la API. Ninguna herramienta del mercado construida sobre ficheros markdown puede ofrecer esto.</li>
+      <li><b><code>is_block_closeable()</code> + <code>block_gate_report()</code>.</b> Un gate que además explica qué falta y cuánto. Alimenta el 422 y el panel con la misma consulta. Ese patrón —la puerta y su explicación son el mismo objeto— debe repetirse en todo lo nuevo.</li>
+      <li><b>Criterios dado/cuando/entonces como filas</b>, no como prosa. La especificación nace ejecutable. Es la base sobre la que se construye cualquier verificación seria.</li>
+      <li><b>Evidencia enlazada a criterio</b> (<code>evidence_criterion</code>, <code>trg_ec_same_block</code>, <code>trg_bac_before_met</code>). La estructura es correcta; lo que falta es la sustancia (§4).</li>
+      <li><b>El motor de huella y sospecha.</b> Es un motor de frescura de conocimiento ya construido, medido y con una decisión de diseño defendida con números. Vale más de lo que el equipo parece creer.</li>
+      <li><b>La cadena de decisión de F1.</b> Grafo supersede sin ciclos, <code>confirmado|inferido</code> con evidencia obligatoria, promoción firmada contra la huella exacta del contenido. Es el mejor trabajo del repositorio.</li>
+      <li><b>Firmas inmutables y segregación de funciones.</b> Correctas en el motor.</li>
+      <li><b>La vía rápida con deuda de análisis y plazo.</b> Es la tercera palanca legítima ante saturación de verificación —bajar la barra deliberadamente— implementada con expediente obligatorio. Es genuinamente novedosa y debería ser argumento comercial, no letra pequeña.</li>
+      <li><b>Disciplina de errores</b>: 422 o 403 con el mensaje del trigger intacto, nunca un 500 con SQL dentro.</li>
+      <li><b>El flujo OpenSpec</b> con cada escenario citando su test. 33 requirements, 39 escenarios, todos anclados.</li>
+    </ul>
+
+    <h3>Los tres puntos donde el mecanismo se acaba</h3>
+
+    <h4>a · La verdad de la evidencia</h4>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div>
+        <p>
+          <code>add_evidence</code> exige que la evidencia declare qué criterios prueba —bien— y
+          después guarda <code>content</code> como texto libre. Quipu no ejecuta el comando, no
+          conoce su código de salida, no calcula huella de la salida, no sabe cuándo ni dónde se
+          produjo. Un agente que escribe <code>"Tests: 562 passed"</code> cierra el mismo gate que
+          uno que corrió la suite.
+        </p>
+      </div>
+    </div>
+    <div class="claim">
+      <div><span class="tag t-inf">Inferencia</span></div>
+      <div>
+        <p>
+          Todo lo que Quipu puede demostrar hoy es que <b>el expediente está completo</b>, no que
+          <b>el trabajo está bien</b>. El principio P4 de FLOTA —«evidencia tipada o no ocurrió»—
+          es en realidad «evidencia <i>declarada</i> o no ocurrió». Es la distancia entre un
+          registro contable y una auditoría.
+        </p>
+      </div>
+    </div>
+    <div class="callout good">
+      <h4>La ironía útil</h4>
+      <p>
+        La verificación determinista que al producto le falta <b>ya existe, funciona y está
+        probada</b>: <code>sistema-a/bin/verificar.sh</code>, 348 líneas de bash que corren el CI,
+        aplican la regla suite-diff contra una línea base, contrastan los ficheros tocados contra
+        el alcance declarado y comprueban el mensaje literal del commit. Tiene tres estados
+        (<code>0 | sombra | 1</code>), <code>FALLA</code> vinculante y <code>PASA</code> que no
+        aprueba nada. Es el activo con mejor relación valor/coste del ecosistema, y está fuera del
+        producto. <b>Productizarlo es el mayor arbitraje disponible.</b>
+      </p>
+    </div>
+
+    <h4>b · El alcance de la norma</h4>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div>
+        <p>
+          <code>TaskPayloadBuilder</code> —lo que devuelve <code>claim_block</code>— entrega
+          bloque, feature, entregables, criterios, dependencias, contratos, endpoints, pantallas
+          y gate. <b>Ni una regla, ni un invariante, ni una decisión.</b> El agente que toma un
+          bloque no ve la norma que lo obliga.
+        </p>
+        <p>
+          <code>block_rule</code> y <code>rule_implementation</code> existen como tablas desde
+          julio y <b>ninguna línea de <code>app/</code>, <code>routes/</code> o <code>tests/</code>
+          las lee o escribe</b>. Son el único puente previsto entre norma y trabajo, y está muerto.
+        </p>
+      </div>
+    </div>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div>
+        <p>
+          <code>verificar_contradicciones</code> no cruza el alcance del cambio contra los
+          invariantes: lista las contradicciones pendientes y los invariantes aplicables. El juicio
+          «¿esto contradice aquello?» es cien por cien del LLM, y <b>abrir la contradicción es
+          voluntario</b>. No existe ningún detector mecánico.
+        </p>
+      </div>
+    </div>
+    <div class="claim">
+      <div><span class="tag t-inf">Inferencia</span></div>
+      <div>
+        <p>
+          La capa normativa está construida con rigor y no gobierna nada. Un agente con prisa no
+          tiene ningún incentivo para abrir una contradicción, y ninguna puerta se lo exige. F1
+          entregó el modelo de datos correcto y no entregó su efecto.
+        </p>
+      </div>
+    </div>
+
+    <h4>c · La identidad del humano</h4>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div>
+        <p>
+          <code>POST /api/auth/session</code> no exige credencial alguna: recibe un
+          <code>member_id</code> y devuelve un token. Verificado contra la instancia viva —
+          respuesta 200, token de <code>admin</code>, <code>/auth/me</code> devolviendo rol
+          <code>human_admin</code> y 22 permisos incluidos <code>block.approve</code>,
+          <code>cambio.authorize</code> y <code>contradiccion.resolver</code>. El token de prueba
+          quedó revocado.
+        </p>
+        <p>
+          <code>GET /api/auth/humans</code> enumera sin autenticación a todas las personas con su
+          <code>id</code>. Los puertos del compose se publican en todas las interfaces, no en
+          <code>127.0.0.1</code>.
+        </p>
+      </div>
+    </div>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div>
+        <p>
+          De 128 rutas, sólo 4 llevan guardia de capacidad (<code>RequiereAbility</code>):
+          aprobar, rechazar, promover decisión, resolver contradicción. <code>POST /api/members</code>
+          lleva únicamente <code>auth:sanctum</code>; <code>MemberController::store</code> no
+          invoca <code>authorize</code>, <code>Gate</code> ni <code>can</code>; existe una sola
+          Policy en todo el proyecto (<code>FirmaPolicy</code>); no hay middleware global de
+          autorización. El rol por omisión de un miembro nuevo es <code>human_admin</code>.
+        </p>
+      </div>
+    </div>
+    <div class="claim">
+      <div><span class="tag t-inf">Inferencia</span></div>
+      <div>
+        <p>
+          De esos hechos se sigue, por construcción, que un token de agente —que satisface
+          <code>auth:sanctum</code>, como prueban las propias suites— puede crear un miembro
+          <code>human</code> con rol <code>human_admin</code>, y que después <b>cualquiera</b>
+          puede obtener su token sin credencial. La frontera humano/agente, que es <i>el</i>
+          diferencial del producto, es correcta en el trigger y franqueable en el perímetro.
+          Ningún test cubre este camino.
+        </p>
+      </div>
+    </div>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div>
+        <p>
+          La tabla <code>firma</code> no tiene clave foránea hacia lo firmado: es polimórfica
+          (<code>entidad_tipo</code>/<code>entidad_id</code>). Ahora mismo la base viva contiene
+          <b>4 firmas <code>promuevo</code> huérfanas</b>, sobre decisiones 1, 2, 3 y 5 que ya no
+          existen. <code>fn_firma_inmutable</code> impide borrar la firma; nada impedía borrar lo
+          firmado. El rastro de autoridad puede apuntar a la nada, y nada lo detecta.
+        </p>
+      </div>
+    </div>
+
+    <h3>Lo que está sobrediseñado o mal orientado</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Pieza</th><th>Qué asumía</th><th>Qué pasó</th><th>Recomendación</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Capa de diseño</b><br><span class="mono">screen_component, interaction, state, data_source</span></td>
+            <td>Que modelar la UI como datos daría al agente el contexto que le falta.</td>
+            <td>Los agentes leen el código directamente. Cero filas en la base viva; requiere que alguien modele a mano toda la interfaz.</td>
+            <td>Congelar. <code>ImpactAnalyzer</code> depende de ella y por eso tampoco funciona sin datos.</td>
+          </tr>
+          <tr>
+            <td><b>Catálogo de entrevista</b><br><span class="mono">AnalysisCatalog, NextQuestion</span></td>
+            <td>Que el diagnóstico brownfield se obtiene preguntando al humano.</td>
+            <td>621 líneas de catálogo para averiguar lo que un agente deduce leyendo el repositorio en dos minutos.</td>
+            <td>Sustituir por análisis derivado del repo; conservar sólo lo que un humano sí sabe y el código no dice.</td>
+          </tr>
+          <tr>
+            <td><b>Plantillas de bootstrap</b></td>
+            <td>Proyectos nuevos como caso principal.</td>
+            <td>El mercado —y el propio análisis externo— sitúa el valor en lo brownfield.</td>
+            <td>Congelar; no ampliar el catálogo.</td>
+          </tr>
+          <tr>
+            <td><b>Dos modelos normativos</b><br><span class="mono">business_rule vs invariante</span></td>
+            <td>Que <code>business_rule</code> (heredado) e <code>invariante</code> (F1) podían convivir.</td>
+            <td><code>business_rule</code> no tiene estado, supersede ni procedencia: una regla se edita en vez de superarse. Chasqui perdió 20 de 63 invariantes al importarlas.</td>
+            <td>Elegir uno. <code>invariante</code> es el correcto.</td>
+          </tr>
+          <tr>
+            <td><b>46 tools MCP</b></td>
+            <td>Que más cobertura de herramienta es más capacidad.</td>
+            <td>Excede el presupuesto de atención de un agente; el análisis externo acierta en que el número no es la ventaja.</td>
+            <td>Consolidar hacia <code>contexto_para(...)</code> y un puñado de verbos de escritura.</td>
+          </tr>
+          <tr>
+            <td><b>Nomenclatura</b><br><span class="mono">AdopcionEngine vs AdoptionEngine</span></td>
+            <td>—</td>
+            <td>Dos clases distintas (sellar línea base / importar estructura) con nombres casi idénticos en dos idiomas. Español e inglés mezclados en todo el modelo.</td>
+            <td>Deuda menor pero real; renombrar cuando se toquen.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════ 3 ══════════ -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Gap analysis frente al desarrollo agentic</h2></div>
+
+    <p>
+      El análisis externo acierta en el marco general y se equivoca en las puntuaciones, porque
+      leyó las dos guías y no el código. Las guías describen con precisión la <i>estructura</i>;
+      el código revela que varias de esas estructuras no tienen efecto. Ese contraste es el
+      contenido más útil de esta sección.
+    </p>
+
+    <h3>Dónde el análisis externo tiene razón y hay que hacerle caso</h3>
+    <ul>
+      <li>El core merece conservarse; no hay que rehacer la arquitectura. <b>Confirmado por el código.</b></li>
+      <li>MCP es transporte, no ventaja competitiva. Correcto: la interfaz ya está siendo absorbida por Claude Code, Codex y GitHub.</li>
+      <li>Ser agnóstico al agente es una decisión estratégica crítica. Ya es cierto: el producto no llama a ningún LLM.</li>
+      <li>Contexto por tarea, inteligencia de proyecto, coordinación multiagente y memoria continua son la frontera correcta.</li>
+      <li>No convertirlo en Jira, ni en IDE, ni en base vectorial; no añadir cientos de tools; <b>no automatizar nunca la aprobación humana</b>.</li>
+      <li>La seguridad no está lista para comercializar. Cierto — y peor de lo que estimó.</li>
+    </ul>
+
+    <h3>Dónde hay que corregirlo</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Área</th><th class="num">Informe externo</th><th>Lo que dice el código</th><th class="num">Real</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Evidencia</b></td><td class="num">8,5 / 10</td>
+            <td>La estructura vale 8,5; la sustancia no llega a 2. Quipu no ejecuta nada y no verifica una sola evidencia. Es <b>la corrección más consecuente</b>, porque toda la tesis del producto se apoya ahí.</td>
+            <td class="num"><b>2 / 10</b></td>
+          </tr>
+          <tr>
+            <td><b>Trazabilidad</b></td><td class="num">9 / 10</td>
+            <td>Impecable para trabajo nacido dentro de Quipu. <b>Inexistente para trabajo adoptado</b>: <code>cambio_ambito()</code> sólo alcanza bloques por <code>feature.cambio_id</code>. El mismo informe llama a la adopción de legado «una de sus principales ventajas competitivas»: las dos afirmaciones no son compatibles.</td>
+            <td class="num"><b>5 / 10</b></td>
+          </tr>
+          <tr>
+            <td><b>Decisiones e invariantes</b></td><td class="num">8,5 / 10</td>
+            <td>El modelo merece 9. Su conexión con el trabajo es 0: sin UI para el único acto humano, sin invariantes en el payload de claim, sin detección mecánica, con <code>block_rule</code> muerta.</td>
+            <td class="num"><b>4 / 10</b></td>
+          </tr>
+          <tr>
+            <td><b>Human-in-the-loop</b></td><td class="num">9 / 10</td>
+            <td>9 en el motor, 2 en el perímetro. Un endpoint sin autenticación emite credenciales de administrador humano.</td>
+            <td class="num"><b>4 / 10</b></td>
+          </tr>
+          <tr>
+            <td><b>Memoria epistémica</b></td><td class="num">no existe</td>
+            <td>Parcialmente incorrecto: <code>invariante.etiqueta</code> (<code>confirmado|inferido</code>) con CHECK que exige evidencia <i>es</i> memoria epistémica, y <code>huella</code>+<code>sospecha</code> es un motor de frescura funcionando. El hueco es que <code>knowledge_entry</code> no tiene nada de eso. La tarea es <b>unificar</b>, no inventar.</td>
+            <td class="num"><b>5 / 10</b></td>
+          </tr>
+          <tr>
+            <td><b>Coordinación multiagente</b></td><td class="num">3 / 10</td>
+            <td>Confirmado, con matiz: la exclusión mutua del claim es correcta (índice único parcial, libre de carrera), pero <b>no hay lease ni heartbeat</b> — un worker muerto retiene un bloque para siempre.</td>
+            <td class="num">3 / 10</td>
+          </tr>
+          <tr>
+            <td><b>Comprensión del código</b></td><td class="num">6 / 10</td>
+            <td>Generoso. <code>quipu:index</code> es heurística de nombre y ruta sobre clases PHP y componentes React; sin grafo de llamadas ni de importaciones. Cero filas en la base viva.</td>
+            <td class="num"><b>3 / 10</b></td>
+          </tr>
+        </tbody>
+        <caption>Puntuaciones del informe externo contrastadas contra el árbol de código y la base de datos viva.</caption>
+      </table>
+    </div>
+
+    <h3>El desacuerdo de fondo: el orden de las fases</h3>
+    <p>
+      El informe externo propone <i>Multi-Agent Orchestration</i> como fase D, antes de
+      <i>Autonomous Verification</i> (E). <b>Ese orden es peligroso.</b> Sin evidencia observada,
+      sin alcance declarado y sin leases, paralelizar agentes sólo consigue que el trabajo no
+      verificable llegue antes y en mayor volumen. Los datos del propio proyecto lo anticipan:
+      con fan-out 1, de 13 tareas ejecutadas 4 necesitaron retrabajo y una llegó al ciclo 4.
+    </p>
+    <p>
+      La verificación debe preceder a la coordinación. No por prudencia: porque el gate es lo que
+      hace seguro paralelizar, y el alcance declarado es simultáneamente el insumo del gate y el
+      mecanismo que evita que dos agentes se pisen.
+    </p>
+
+    <h3>Lo que Quipu no cubre y el desarrollo agentic va a exigir</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Capacidad futura</th><th>Estado</th><th>Qué falta exactamente</th></tr></thead>
+        <tbody>
+          <tr><td><b>Procedencia verificable del trabajo</b></td><td><span class="pill p-crit">Ausente</span></td><td>Ejecutar el comando, capturar salida y código de salida, sellar con huella, fechar. Sin esto no hay auditoría, sólo contabilidad.</td></tr>
+          <tr><td><b>Alcance como dato</b></td><td><span class="pill p-crit">Ausente</span></td><td>Ninguna tabla declara qué ficheros toca una unidad de trabajo. Es la primitiva que falta bajo cuatro capacidades distintas.</td></tr>
+          <tr><td><b>Contexto acotado por tarea</b></td><td><span class="pill p-alta">Semilla</span></td><td><code>dominio_contexto</code> devuelve un dominio entero. No existe «para esta tarea, este es el contexto correcto».</td></tr>
+          <tr><td><b>Detección mecánica de contradicción</b></td><td><span class="pill p-crit">Ausente</span></td><td>Las piezas están: <code>invariante.evidencia</code> ancla a <code>ruta:símbolo</code>. Falta cruzarlas con el alcance y exigir declaración.</td></tr>
+          <tr><td><b>Leases y detección de conflicto</b></td><td><span class="pill p-crit">Ausente</span></td><td>TTL, heartbeat, liberación automática, y rechazo de un claim cuyo alcance intersecta otro activo.</td></tr>
+          <tr><td><b>Autonomía graduada con expediente</b></td><td><span class="pill p-alta">Diseñada</span></td><td>L1–L4 por capacidad, calculados como consulta SQL sobre el historial de evidencia. Diseñado en FLOTA §4, sin una línea de código.</td></tr>
+          <tr><td><b>Revisión agéntica antes del humano</b></td><td><span class="pill p-crit">Ausente</span></td><td>Reviewer, tester y security como productores de evidencia tipada; el humano recibe «un bloque listo con N hallazgos», no 400 líneas.</td></tr>
+          <tr><td><b>Clasificación de riesgo por operación</b></td><td><span class="pill p-crit">Ausente</span></td><td>No toda acción merece la misma atención humana. Es la base correcta del «dial de control» de F4.</td></tr>
+          <tr><td><b>Aprendizaje continuo</b></td><td><span class="pill p-alta">Semilla</span></td><td><code>huella</code>+<code>sospecha</code> ya detecta obsolescencia. Falta el ciclo: el agente descubre → propone conocimiento → evidencia → validación → confirmado.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════ 4 ══════════ -->
+  <section id="s4">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Cambios recomendados sobre lo ya construido</h2></div>
+
+    <p>
+      Ninguno de estos cambios rehace el core. Todos lo completan en el punto donde el mecanismo
+      se interrumpe.
+    </p>
+
+    <h3>El defecto estructural, en una consulta</h3>
+    <div class="claim">
+      <div><span class="tag t-hecho">Hecho</span></div>
+      <div>
+        <p>
+          <code>cambio_ambito(p_cambio_id)</code> alcanza los criterios de un bloque con esta
+          cláusula, y sólo con esta: <code>JOIN feature f ON f.id = b.feature_id WHERE
+          f.cambio_id = p_cambio_id</code>. Los 8 features del proyecto <code>chasqui</code>
+          cargado en la base viva tienen <code>cambio_id = NULL</code> y
+          <code>es_heredado = true</code>, porque así entra un proyecto adoptado. Comprobado
+          contra la función desplegada y contra las filas reales.
+        </p>
+        <p>
+          Además no existe ninguna tool MCP que cree un bloque colgando de un cambio:
+          <code>import_project_structure</code> toma el payload del proyecto entero, sin vínculo.
+        </p>
+      </div>
+    </div>
+    <div class="claim">
+      <div><span class="tag t-inf">Inferencia</span></div>
+      <div>
+        <p>
+          Para un proyecto brownfield —el caso que el propio análisis externo señala como
+          ventaja competitiva principal— la cadena de gobierno de Quipu es <b>inerte</b>. Puede
+          inventariar lo que hay, pero no puede atar un solo bloque a una autorización.
+        </p>
+      </div>
+    </div>
+    <div class="callout warn">
+      <h4>Esto no es una hipótesis: ya se midió, y el cliente ya emitió su veredicto</h4>
+      <p>
+        El 2026-08-27 se cargó Chasqui en Quipu. El 2026-08-28 su propia auditoría concluyó que
+        Quipu <b>no puede</b> absorber su metodología «por razón estructural, no de madurez», y
+        registró la decisión <code>PROCESO-002</code> repartiendo autoridad en tres registros:
+        <code>decisiones/</code> gobierna, <code>pedidos/</code> autoriza, <b>Quipu prueba</b>.
+      </p>
+      <p class="quote" style="margin:14px 0 0">
+        «las <code>business_rule</code> de Quipu son un espejo de sólo lectura; la norma vigente
+        es <code>decisiones/</code> y ninguna puerta de Quipu la comprueba»
+        <cite>invariante de PROCESO-002 · chasqui_n8n · 2026-08-28</cite>
+      </p>
+      <p style="margin-top:14px">
+        El criterio de salida de la F2 del plan —«el siguiente cambio real de Chasqui se propone,
+        autoriza, ejecuta, verifica y cierra desde Quipu»— <b>ya se intentó y ya falló</b>, por
+        causas que el plan no contempla. Reejecutar F2 como está escrita repite el resultado.
+      </p>
+    </div>
+
+    <h3>Los ocho cambios</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Cambio</th><th>Sobre qué</th><th>Por qué ahora</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="mono-cell">C1</td>
+            <td><b>Autenticación real para humanos</b>, o binding a <code>127.0.0.1</code> declarado como restricción dura mientras tanto.</td>
+            <td><code>AuthController::session</code>, <code>docker-compose.yml</code></td>
+            <td>La integridad de todo lo demás depende de esto. No es deuda de F5: la instancia ya corre con puertos abiertos.</td>
+          </tr>
+          <tr>
+            <td class="mono-cell">C2</td>
+            <td><b>Autorización sobre la gestión de miembros.</b> Alta, baja, alta de agente y rotación de key detrás de una ability sólo humana, con test de que un token de agente recibe 403.</td>
+            <td><code>routes/api.php</code>, <code>MemberController</code></td>
+            <td>Es el camino por el que un agente puede fabricar al humano que firma su propio trabajo.</td>
+          </tr>
+          <tr>
+            <td class="mono-cell">C3</td>
+            <td><b>Integridad referencial de la firma.</b> Trigger que impide borrar una entidad firmada, y migración que concilia las 4 firmas huérfanas actuales.</td>
+            <td><code>firma</code>, <code>decision</code></td>
+            <td>El rastro de autoridad es el activo del producto. Hoy puede apuntar a la nada sin que nada avise.</td>
+          </tr>
+          <tr>
+            <td class="mono-cell">C4</td>
+            <td><b>Detección de deriva de esquema en CI.</b> Comparar objetos desplegados contra los esperados. Reponer <code>fn_contradiccion_mismo_proyecto</code> con una migración nueva, nunca editando la aplicada.</td>
+            <td>CI, migraciones</td>
+            <td>«La base manda» sólo es cierto si la base desplegada es la que se escribió. Ahora mismo no lo es.</td>
+          </tr>
+          <tr>
+            <td class="mono-cell">C5</td>
+            <td><b><code>artefacto_alcance</code>: el alcance como dato.</b> Tabla que liga unidades de trabajo (cambio, bloque, microtarea) a rutas y símbolos. Declarado al planificar, comprobado al evidenciar.</td>
+            <td>Nuevo</td>
+            <td>Es <b>la primitiva que falta</b>. Desbloquea a la vez detección de contradicción, propiedad de ficheros para agentes paralelos, contexto por tarea e impacto desde el código real.</td>
+          </tr>
+          <tr>
+            <td class="mono-cell">C6</td>
+            <td><b>Evidencia observada.</b> <code>evidence</code> gana <code>origen (declarada|observada)</code>, <code>comando</code>, <code>exit_code</code>, <code>huella_salida</code>, <code>producido_en</code>. Un runner ejecuta y publica; <code>has_required_evidence()</code> puede exigir <code>observada</code>.</td>
+            <td><code>evidence</code>, nuevo runner</td>
+            <td>Convierte el expediente en auditoría. Es lo que ninguna herramienta del mercado hace.</td>
+          </tr>
+          <tr>
+            <td class="mono-cell">C7</td>
+            <td><b>La norma viaja con el trabajo.</b> El payload de <code>claim_block</code> incluye los invariantes que intersectan el alcance del bloque y las decisiones vigentes de su dominio. <code>block_rule</code> se resucita como enlace derivado o se elimina.</td>
+            <td><code>TaskPayloadBuilder</code></td>
+            <td>Sin esto, F1 es un modelo de datos que nadie consulta.</td>
+          </tr>
+          <tr>
+            <td class="mono-cell">C8</td>
+            <td><b>Puente adopción ↔ demanda.</b> Que un cambio alcance bloques directamente, no sólo por <code>feature.cambio_id</code>.</td>
+            <td><code>cambio_ambito()</code>, esquema</td>
+            <td>Cambio pequeño, consecuencia grande: es lo que desbloquea el caso brownfield y con él F2.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════ 5 ══════════ -->
+  <section id="s5">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Roadmap revisado</h2></div>
+
+    <p>
+      El principio de ordenación es uno solo: <b>cerrar el ciclo sobre un cambio real, de punta a
+      punta, con evidencia que Quipu haya observado</b>. Todo lo que no acerca a ese momento se
+      pospone.
+    </p>
+
+    <h3>F-A · Cierre del perímetro y del expediente <span class="pill p-crit">Crítica</span></h3>
+    <p><b>1–2 semanas.</b> Hacer que las garantías que Quipu ya anuncia sean ciertas. No añade capacidades: repara la credibilidad de las existentes.</p>
+    <ul>
+      <li>C1 autenticación humana (o binding local declarado). C2 autorización de miembros. C3 integridad de firma. C4 detección de deriva.</li>
+      <li>Suite de perímetro: los mismos sondeos de esta auditoría, convertidos en tests que deben devolver 401 o 403.</li>
+    </ul>
+
+    <h3>F-B · Alcance y evidencia observada <span class="pill p-crit">Crítica</span></h3>
+    <p><b>3–4 semanas.</b> Es la fase que cambia lo que Quipu <i>es</i>. Aquí se productiza <code>bin/verificar.sh</code>.</p>
+    <ul>
+      <li>C5 <code>artefacto_alcance</code>. C6 evidencia observada con procedencia.</li>
+      <li><b>Suite-diff como tipo de evidencia y como puerta</b>: línea base por proyecto; <code>passed</code> no puede bajar. Portado literalmente del script que ya funciona.</li>
+      <li><b>Puerta de alcance</b>: ficheros tocados (del diff que captura el runner) contra el alcance declarado. Fuera de alcance ⇒ evidencia rechazada.</li>
+      <li>Tipos declarables nuevos: <code>mutation_score</code>, <code>env_limpio</code>. El DoD tipado ya los soporta; son filas de lookup más el runner.</li>
+    </ul>
+
+    <h3>F-C · La norma alcanza al trabajo <span class="pill p-alta">Alta</span></h3>
+    <p><b>2–3 semanas.</b> Conecta F1 con la ejecución y desbloquea brownfield.</p>
+    <ul>
+      <li>C7 invariantes y decisiones en el payload de claim. C8 puente adopción↔demanda.</li>
+      <li><b>Detección mecánica de contradicción</b>: cuando el alcance de un cambio intersecta el ancla de un invariante, el agente debe declarar explícitamente «no contradice» o abrir contradicción; el gate no deja avanzar hasta que todo invariante intersectado tenga declaración. La base no juzga semántica — exige que alguien se pronuncie.</li>
+      <li><b>Pantallas de decisiones, invariantes y contradicciones.</b> Promover y resolver son actos exclusivamente humanos y hoy el humano no tiene dónde hacerlos.</li>
+      <li>Unificar el modelo normativo: <code>invariante</code> gana, <code>business_rule</code> se retira o se convierte en su espejo declarado.</li>
+    </ul>
+
+    <h3>F-D · Dogfooding real <span class="pill p-crit">Crítica</span></h3>
+    <p><b>Continua, arranca al cerrar F-B.</b> No es ceremonia: es el único mecanismo que encuentra los huecos antes que el cliente.</p>
+    <ul>
+      <li><b>Quipu se convierte en un proyecto dentro de Quipu.</b> F-C en adelante se planifica, ejecuta y verifica a través de él.</li>
+      <li>Después Chasqui. Con C8 aplicado, el bloqueo de <code>P-010</code> desaparece y <code>PROCESO-002</code> puede revisarse.</li>
+      <li>La instrumentación de coste vuelve a ver la actividad real (hoy <code>bin/metricas.sh</code> está ciego).</li>
+    </ul>
+
+    <h3>F-E · Contexto por tarea <span class="pill p-alta">Alta</span></h3>
+    <p><b>2–3 semanas.</b> Lo que el análisis externo identifica como mayor ROI — imposible antes de F-B, casi gratis después.</p>
+    <ul>
+      <li><code>contexto_para(bloque|microtarea)</code>: a partir del alcance, devuelve decisiones vigentes, invariantes aplicables, contratos congelados, cambios cerrados relacionados, sospechas pendientes, deuda y evidencia exigida — <b>cada elemento etiquetado</b> <code>confirmado</code>, <code>inferido</code>, <code>desconocido</code> o <code>superado</code>.</li>
+      <li>Unificar la epistemología: <code>knowledge_entry</code> adopta la disciplina que <code>invariante</code> ya tiene (etiqueta, evidencia obligatoria, supersede).</li>
+      <li>Cerrar el ciclo de aprendizaje: descubrimiento → conocimiento propuesto → evidencia → validación → confirmado.</li>
+    </ul>
+
+    <h3>F-F · Coordinación multiagente <span class="pill p-media">Media</span></h3>
+    <p><b>Después de B, C y E.</b> Ahora sí es seguro paralelizar.</p>
+    <ul>
+      <li>Leases con TTL y heartbeat: un worker muerto libera su bloque.</li>
+      <li><b>Detección de conflicto por alcance</b>: se rechaza un claim cuyo alcance intersecta el de otro claim activo. Sale directamente de C5.</li>
+      <li>Registro de capacidades por agente y niveles L1–L4 calculados como consulta SQL sobre el historial de evidencia, con democión automática ante violación de guardarraíl.</li>
+      <li>Sólo entonces, el dispatcher. Los agentes reportan a la base; no se hablan entre ellos.</li>
+    </ul>
+
+    <h3>F-G · Revisión agéntica y modelo de riesgo <span class="pill p-media">Media</span></h3>
+    <ul>
+      <li>Clasificación de riesgo por operación, que gobierna cuánta atención humana exige cada acto. Es la implementación correcta del «dial de control» de la F4 original.</li>
+      <li>Pases de revisor, tester y seguridad como productores de evidencia tipada; cualquier juez LLM exige meta-evaluación registrada antes de ser vinculante.</li>
+    </ul>
+
+    <h3>F-H · SaaS <span class="pill p-baja">Baja hasta haber tracción</span></h3>
+    <p>
+      Sin cambios respecto al plan (tenancy con RLS, OAuth 2.1, billing, sólo metadatos en la
+      nube), con una diferencia: la multi-tenencia resulta mucho más barata si el perímetro se
+      arregló en F-A. Sigue condicionada a 5–10 usuarios externos self-hosted.
+    </p>
+  </section>
+
+  <!-- ══════════ 6 ══════════ -->
+  <section id="s6">
+    <div class="sec-head"><span class="sec-num">06</span><h2>Prioridad de cada cambio</h2></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Prioridad</th><th>Cambios</th><th>Criterio</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="pill p-crit">Crítica</span></td>
+            <td>C1 perímetro · C2 autorización de miembros · C5 alcance como dato · C6 evidencia observada · C8 puente adopción↔demanda · dogfooding propio</td>
+            <td>Sin ellos, o una garantía anunciada es falsa, o la siguiente fase se construye sobre arena. Ninguno es opcional antes de enseñar el producto a nadie.</td>
+          </tr>
+          <tr>
+            <td><span class="pill p-alta">Alta</span></td>
+            <td>C3 integridad de firma · C4 deriva de esquema · puerta suite-diff · puerta de alcance · C7 norma en el payload · detección mecánica de contradicción · UI de decisiones · <code>contexto_para</code></td>
+            <td>Convierten capacidades existentes en capacidades con efecto. Cada una tiene un coste bajo y desbloquea algo que ya está pagado.</td>
+          </tr>
+          <tr>
+            <td><span class="pill p-media">Media</span></td>
+            <td>Unificación normativa · leases y conflicto por alcance · niveles de autonomía · modelo de riesgo · unificación epistémica · retirada de la capa de diseño</td>
+            <td>Importan para el producto de 12–24 meses. No bloquean el ciclo cerrado.</td>
+          </tr>
+          <tr>
+            <td><span class="pill p-baja">Baja</span></td>
+            <td>Dispatcher · SaaS · marketplace de skills · plantillas · limpieza de nomenclatura</td>
+            <td>Valiosos, pero su valor depende de que todo lo anterior exista. Adelantarlos multiplica el coste.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>Deuda ya declarada por el equipo, reordenada</h4>
+    <p>
+      <code>DEUDA-F2.md</code> es un documento excelente y su contenido sigue vigente. Con esta
+      auditoría cambian tres prioridades: <b>B5</b> (resurrección <code>superada→vigente</code>)
+      sube a alta porque F-C convierte a <code>decision</code> en gobierno efectivo;
+      <b>C3 y C4</b> (worktrees que serializan el CI por la pila Docker exclusiva) suben a alta
+      porque F-F depende de poder verificar en paralelo; y <b>D5</b> (métricas ciegas) sube a
+      alta porque F-D no se puede medir sin ella. <b>A3</b> —inventario del origen de F2— queda
+      resuelto: 24 decisiones, 10 pedidos abiertos, 1 archivado.
+    </p>
+  </section>
+
+  <!-- ══════════ 7 ══════════ -->
+  <section id="s7">
+    <div class="sec-head"><span class="sec-num">07</span><h2>Dependencias y orden de ejecución</h2></div>
+
+    <figure>
+      <div class="fig-body">
+        <svg viewBox="0 0 960 320" role="img" aria-label="Grafo de dependencias entre fases: F-A precede a F-B; F-B precede a F-C y F-E; ambas preceden a F-D; F-D precede a F-F y F-G.">
+          <defs>
+            <marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L8,4 L0,8 z" class="n-arrow"></path>
+            </marker>
+          </defs>
+
+          <path class="n-edge" marker-end="url(#ar)" d="M160,158 L190,158"></path>
+          <path class="n-edge" marker-end="url(#ar)" d="M356,146 C376,146 372,68 386,68"></path>
+          <path class="n-edge" marker-end="url(#ar)" d="M356,170 C376,170 372,248 386,248"></path>
+          <path class="n-edge" marker-end="url(#ar)" d="M552,68 C572,68 568,150 582,150"></path>
+          <path class="n-edge" marker-end="url(#ar)" d="M552,248 C572,248 568,166 582,166"></path>
+          <path class="n-edge" marker-end="url(#ar)" d="M726,150 C746,150 742,68 762,68"></path>
+          <path class="n-edge" marker-end="url(#ar)" d="M726,166 C746,166 742,248 762,248"></path>
+
+          <rect class="n-box-crit" x="24" y="126" width="136" height="64" rx="2"></rect>
+          <text class="n-code" x="38" y="150">F-A</text>
+          <text class="n-name" x="38" y="169">Perímetro</text>
+
+          <rect class="n-box-crit" x="190" y="126" width="166" height="64" rx="2"></rect>
+          <text class="n-code" x="204" y="150">F-B</text>
+          <text class="n-name" x="204" y="169">Alcance + evidencia</text>
+
+          <rect class="n-box-alta" x="386" y="36" width="166" height="64" rx="2"></rect>
+          <text class="n-code" x="400" y="60">F-C</text>
+          <text class="n-name" x="400" y="79">Norma → trabajo</text>
+
+          <rect class="n-box-alta" x="386" y="216" width="166" height="64" rx="2"></rect>
+          <text class="n-code" x="400" y="240">F-E</text>
+          <text class="n-name" x="400" y="259">Contexto por tarea</text>
+
+          <rect class="n-box-crit" x="582" y="126" width="144" height="64" rx="2"></rect>
+          <text class="n-code" x="596" y="150">F-D</text>
+          <text class="n-name" x="596" y="169">Dogfooding</text>
+
+          <rect class="n-box" x="762" y="36" width="166" height="64" rx="2"></rect>
+          <text class="n-code" x="776" y="60">F-F</text>
+          <text class="n-name" x="776" y="79">Coordinación</text>
+
+          <rect class="n-box" x="762" y="216" width="166" height="64" rx="2"></rect>
+          <text class="n-code" x="776" y="240">F-G</text>
+          <text class="n-name" x="776" y="259">Riesgo y revisión</text>
+
+          <text class="n-note" x="762" y="160">F-H · SaaS</text>
+          <text class="n-note" x="762" y="178">sólo con tracción</text>
+        </svg>
+      </div>
+      <figcaption>
+        Rojo: crítica. Ámbar: alta. El orden no es negociable en dos puntos — F-A es el suelo de
+        integridad de todo lo demás, y F-B es el insumo simultáneo de F-C, F-E y F-F.
+      </figcaption>
+    </figure>
+
+    <h3>Las cinco dependencias que fijan el orden</h3>
+    <ol>
+      <li><b>F-A antes que todo.</b> Mientras cualquiera pueda emitirse un token de administrador, cada garantía que se construya encima es decorativa.</li>
+      <li><b>C5 (alcance) antes de cuatro cosas a la vez</b>: la puerta de alcance, la norma en el payload, la detección de contradicción, <code>contexto_para</code> y la detección de conflicto entre agentes. Es la primitiva de mayor apalancamiento del sistema.</li>
+      <li><b>C6 (evidencia observada) antes de suite-diff, puerta de alcance y cualquier revisión agéntica.</b> Los tres necesitan una salida en la que se pueda confiar.</li>
+      <li><b>C8 (puente) antes de Chasqui.</b> Sin él, F2 vuelve a chocar con el mismo muro medido el 2026-08-28.</li>
+      <li><b>F-E (contexto) antes de F-F (coordinación).</b> Paralelizar agentes que reciben contexto indiscriminado multiplica el problema en vez de resolverlo.</li>
+    </ol>
+
+    <h4>Lo que puede ir en paralelo</h4>
+    <p>
+      F-C y F-E son independientes entre sí una vez cerrada F-B, y las pantallas web de F-C no
+      dependen de nada del backend nuevo — pueden adelantarse en cuanto haya alguien libre. La
+      retirada de la capa de diseño y la unificación de nomenclatura son trabajo de fondo que no
+      bloquea ni es bloqueado. <b>Antes de intentar paralelismo real conviene resolver C3 y C4 de
+      <code>DEUDA-F2</code></b>: hoy la pila Docker es exclusiva y las worktrees serializan el CI,
+      así que dos tareas en paralelo rinden como una.
+    </p>
+  </section>
+
+  <!-- ══════════ 8 ══════════ -->
+  <section id="s8">
+    <div class="sec-head"><span class="sec-num">08</span><h2>Qué NO debería desarrollarse</h2></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>No construir</th><th>Razón</th></tr></thead>
+        <tbody>
+          <tr><td><b>Ampliación de la capa de diseño</b> (catálogo de componentes, interacciones, estados)</td><td>Modela como datos lo que los agentes leen del código. Cero filas tras un año. Congelar, no ampliar.</td></tr>
+          <tr><td><b>Ampliación del catálogo de entrevista</b></td><td>Pregunta al humano lo que el repositorio ya responde. Sustituir por análisis derivado.</td></tr>
+          <tr><td><b>Más plantillas de bootstrap</b></td><td>El valor está en brownfield. Cada plantilla nueva es mantenimiento sobre una apuesta ya perdida.</td></tr>
+          <tr><td><b>El dispatcher, antes de F-B y F-C</b></td><td>Automatiza el reparto de trabajo cuyo resultado nadie puede verificar. Convierte un problema de calidad en un problema de volumen.</td></tr>
+          <tr><td><b>Mensajería agente-a-agente / A2A</b></td><td>Contradice P5 de la propia FLOTA: los handoffs son contratos en la base, no conversaciones. La coordinación por conversación es justo el modo de fallo dominante.</td></tr>
+          <tr><td><b>Base vectorial o memoria semántica como capacidad principal</b></td><td>El estado persistente ya vive en una base transaccional. La memoria semántica es una pieza, no la tesis.</td></tr>
+          <tr><td><b>Más tools MCP</b></td><td>46 ya excede el presupuesto de atención de un agente. La dirección correcta es consolidar, no sumar.</td></tr>
+          <tr><td><b>Jueces LLM vinculantes sin meta-evaluación registrada</b></td><td>La precisión de un juez varía enormemente por dominio y prompt. Oracle determinista primero; juez estadístico después; juez sin meta-evaluación, nunca.</td></tr>
+          <tr><td><b>Automatizar cualquier aprobación humana</b></td><td>Destruye la única propiedad que ninguna herramienta del mercado replica. Innegociable.</td></tr>
+          <tr><td><b>Un segundo modelo normativo</b></td><td><code>business_rule</code> e <code>invariante</code> no pueden coexistir: ya causaron pérdida de norma al importar Chasqui.</td></tr>
+          <tr><td><b>Competir en generación de código</b></td><td>Claude Code, Codex y Cursor poseen la interfaz del agente. Quipu debe ser el plano de control que ninguno de ellos quiere ser.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════ 9 ══════════ -->
+  <section id="s9">
+    <div class="sec-head"><span class="sec-num">09</span><h2>Criterios objetivos de cierre de fase</h2></div>
+    <p>Cada criterio es binario y reejecutable. Ninguno admite «revisión humana» como única prueba.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Fase</th><th>Se considera terminada cuando…</th></tr></thead>
+        <tbody>
+          <tr><td><b>F-A</b><br>Perímetro</td><td>
+            <ul style="margin:0;padding-left:17px">
+              <li>La suite de perímetro pasa: ningún endpoint emite credencial sin autenticar, y un token de agente recibe 403 en toda ruta de gestión de miembros.</li>
+              <li>Borrar una entidad firmada es imposible; cero firmas huérfanas en la base.</li>
+              <li>El chequeo de deriva de esquema corre en CI y sale verde sobre una base recién migrada y sobre la base viva.</li>
+              <li>CI completo verde, sin suites desactivadas.</li>
+            </ul>
+          </td></tr>
+          <tr><td><b>F-B</b><br>Alcance y evidencia</td><td>
+            <ul style="margin:0;padding-left:17px">
+              <li>Un bloque no llega a <code>done</code> sin al menos una evidencia con <code>origen = observada</code> cuyo <code>exit_code</code> y huella de salida produjo el runner.</li>
+              <li>Un intento de cerrar con <code>passed</code> por debajo de la línea base es rechazado por la puerta, no por convención.</li>
+              <li>Un fichero tocado fuera del alcance declarado hace fallar la evidencia, con el nombre del fichero en el mensaje.</li>
+              <li>Demostrado sobre un cambio real, no sobre un fixture.</li>
+            </ul>
+          </td></tr>
+          <tr><td><b>F-C</b><br>Norma → trabajo</td><td>
+            <ul style="margin:0;padding-left:17px">
+              <li><code>claim_block</code> devuelve los invariantes que intersectan el alcance del bloque; hay test que lo verifica.</li>
+              <li>Un cambio cuyo alcance toca el ancla de un invariante no avanza hasta que ese invariante tenga declaración explícita.</li>
+              <li>Un bloque de un proyecto adoptado puede colgar de un cambio y <code>cambio_ambito()</code> lo alcanza.</li>
+              <li>Un humano promueve una decisión y resuelve una contradicción <b>desde la web</b>, sin curl.</li>
+              <li>Existe un único modelo normativo.</li>
+            </ul>
+          </td></tr>
+          <tr><td><b>F-D</b><br>Dogfooding</td><td>
+            <ul style="margin:0;padding-left:17px">
+              <li>Quipu existe como proyecto en su propia base, con su línea base sellada.</li>
+              <li>Al menos un cambio real por proyecto —Quipu y Chasqui— recorre necesidad → cambio autorizado → bloques → evidencia observada → firma → cerrado, íntegramente dentro de Quipu.</li>
+              <li>El export markdown de ese cambio coincide con lo que la metodología file-based habría escrito.</li>
+              <li>La instrumentación de coste vuelve a registrar actividad real.</li>
+            </ul>
+          </td></tr>
+          <tr><td><b>F-E</b><br>Contexto</td><td>
+            <ul style="margin:0;padding-left:17px">
+              <li><code>contexto_para</code> devuelve todo elemento etiquetado con su estado epistémico; ninguno sin etiqueta.</li>
+              <li>Medido sobre los dos proyectos con dogfooding: reducción de tokens de entrada y tasa de primera pasada frente a un agente sin la tool. La mejora se declara con número, no con impresión.</li>
+            </ul>
+          </td></tr>
+          <tr><td><b>F-F</b><br>Coordinación</td><td>
+            <ul style="margin:0;padding-left:17px">
+              <li>Un worker que muere libera su bloque al vencer el lease, sin intervención.</li>
+              <li>Un claim cuyo alcance intersecta otro activo se rechaza nombrando el conflicto.</li>
+              <li>El nivel de autonomía de un agente sale de una consulta SQL sobre su historial, y una violación de guardarraíl lo baja automáticamente el mismo día.</li>
+              <li>Dos agentes cierran dos bloques del mismo feature en paralelo sin conflicto y con evidencia observada.</li>
+            </ul>
+          </td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════ 10 ══════════ -->
+  <section id="s10">
+    <div class="sec-head"><span class="sec-num">10</span><h2>Arquitectura objetivo</h2></div>
+
+    <p>
+      La arquitectura elegida en el documento 05 del plan es correcta y no debe cambiarse:
+      <b>Quipu es el plano de control, y ya es el orquestador</b>. No hace falta LangGraph, ni
+      CrewAI, ni un SDK de agentes en el núcleo — las transiciones de grafo ya son filas, y
+      duplicar el estado en dos sitios produce dos verdades. Lo que cambia no es la topología,
+      sino qué es capaz de imponer el plano de control.
+    </p>
+
+    <h3>Las cinco responsabilidades del Quipu que debería existir</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Responsabilidad</th><th>Pregunta que contesta</th><th>Mecanismo</th></tr></thead>
+        <tbody>
+          <tr><td><b>Verdad operativa</b></td><td>¿Qué es cierto hoy sobre este proyecto, y con qué grado de certeza?</td><td>Grafos de decisión, requisito, trabajo y evidencia, todos con etiqueta epistémica y huella. Motor de sospecha propagando obsolescencia.</td></tr>
+          <tr><td><b>Contexto acotado</b></td><td>Para esta tarea, ¿cuál es el contexto correcto?</td><td><code>contexto_para</code> derivado del alcance declarado. No «aquí tienes todo», sino «esto es lo que te obliga».</td></tr>
+          <tr><td><b>Procedencia verificable</b></td><td>¿Esta prueba la produjo alguien, o la escribió alguien?</td><td>Runner que ejecuta, sella y fecha. Puertas que pueden exigir <code>observada</code>. <b>Éste es el foso.</b></td></tr>
+          <tr><td><b>Autoridad</b></td><td>¿Quién autorizó esto, y sigue siendo cierto lo que firmó?</td><td>Firmas inmutables contra huella de contenido, segregación de funciones, integridad referencial, perímetro cerrado.</td></tr>
+          <tr><td><b>Autonomía con expediente</b></td><td>¿Cuánta libertad se ha ganado este agente, y en qué capacidad?</td><td>L1–L4 por capacidad calculados como consulta sobre historial de evidencia y violaciones. Democión automática.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Restricciones que la arquitectura debe seguir respetando</h3>
+    <ul>
+      <li><b>El producto no llama a ningún LLM.</b> Verificado hoy, y debe seguir siendo cierto: es lo que lo hace agnóstico al agente y auditable.</li>
+      <li><b>Las reglas viven en Postgres primero.</b> Sólo lo que no cabe en un trigger va en PHP.</li>
+      <li><b>Humanos y agentes por la misma puerta.</b> Sin puerta de servicio — y, tras F-A, sin puerta trasera tampoco.</li>
+      <li><b>Los agentes reportan a la base, no se hablan entre ellos.</b> El handoff es una fila verificable.</li>
+      <li><b>Ningún acto de gobierno es automatizable.</b> Aprobar, autorizar, promover y resolver son humanos por diseño, no por falta de tiempo.</li>
+    </ul>
+
+    <h3>Diferenciación defendible</h3>
+    <p>
+      Frente a Claude Code, Codex, Cursor y Copilot la estrategia correcta ya está en el plan —
+      ser agnóstico al agente y no competir en la interfaz — pero el argumento comercial debe
+      cambiar. «Tenemos MCP» y «tenemos gobernanza» dejarán de distinguir en doce meses. Lo que
+      no puede copiarse encima de ficheros markdown, ni dentro de una sesión de agente, son dos
+      cosas:
+    </p>
+    <div class="callout">
+      <p style="margin-bottom:10px">
+        <b>1 · El único sistema que rechaza trabajo cuya prueba no observó.</b> Los hooks de un
+        CLI son por sesión y son consejos. Una puerta que exige evidencia sellada, entre sesiones,
+        entre agentes y entre proveedores, no la tiene nadie.
+      </p>
+      <p style="margin:0">
+        <b>2 · Autonomía con expediente.</b> Nadie más puede demostrar con filas de una base por
+        qué un agente concreto merece más libertad en una capacidad concreta — ni retirársela el
+        mismo día en que la pierde.
+      </p>
+    </div>
+    <p>
+      La formulación corta: <b>Git responde qué cambió; Quipu responde qué estaba permitido
+      cambiar, con qué autoridad y con qué prueba</b> — y sólo cree en pruebas que vio producir.
+    </p>
+  </section>
+
+  <!-- ══════════ 11 ══════════ -->
+  <section id="s11">
+    <div class="sec-head"><span class="sec-num">11</span><h2>Riesgos de seguir el roadmap actual sin modificarlo</h2></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Riesgo</th><th>Gravedad</th><th>Evidencia de que es real</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>F2 repite un fracaso ya medido</b></td>
+            <td><span class="pill p-crit">Crítica</span></td>
+            <td>El intento del 2026-08-27/28 concluyó formalmente que Quipu no puede gobernar Chasqui, y el cliente registró esa conclusión como norma vigente (<code>PROCESO-002</code>). Sin C8, el resultado es idéntico y esta vez queda por escrito dos veces.</td>
+          </tr>
+          <tr>
+            <td><b>La promesa central resulta ser falsa en la primera demo</b></td>
+            <td><span class="pill p-crit">Crítica</span></td>
+            <td>Basta que alguien pegue un CI verde falso y cierre un bloque. El producto se vende como enforcement mecánico; ese momento lo reclasifica como gestor de tareas con buena documentación.</td>
+          </tr>
+          <tr>
+            <td><b>El hueco de perímetro llega a producción</b></td>
+            <td><span class="pill p-crit">Crítica</span></td>
+            <td>Verificado en la instancia viva, con puertos publicados en todas las interfaces. Para un producto cuyo único diferencial es la autoridad humana, un endpoint que emite credenciales de administrador no es un bug: es un error de categoría.</td>
+          </tr>
+          <tr>
+            <td><b>Construir FLOTA antes que la verificación</b></td>
+            <td><span class="pill p-alta">Alta</span></td>
+            <td>Los propios datos lo predicen: con fan-out 1, 4 de 13 tareas necesitaron retrabajo y una llegó al ciclo 4. Multiplicar generación sin multiplicar verificación es exactamente el modo de fallo que el documento 03 del plan describe correctamente y el orden de fases contradice.</td>
+          </tr>
+          <tr>
+            <td><b>La deriva de esquema pasa desapercibida</b></td>
+            <td><span class="pill p-alta">Alta</span></td>
+            <td>Ya ocurrió: una función que las migraciones crean no existe en la base viva. «La base manda» dejó de ser cierto en silencio, que es el único modo en que puede dejar de serlo.</td>
+          </tr>
+          <tr>
+            <td><b>Cero dogfooding convierte el roadmap en literatura</b></td>
+            <td><span class="pill p-alta">Alta</span></td>
+            <td>Los tres huecos estructurales de esta auditoría se descubren en la primera hora de uso real. Ninguno estaba en <code>DEUDA-F2</code>, que por lo demás es un documento excelente — porque se escribió desde los documentos, no desde el uso.</td>
+          </tr>
+          <tr>
+            <td><b>El paquete de metodología se convierte en el producto</b></td>
+            <td><span class="pill p-alta">Alta</span></td>
+            <td>Ya está pasando. <code>sistema-a</code> tiene la verificación determinista, el contrato de handoff mecánico y el ledger; Quipu tiene el modelo de datos. <code>PROCESO-002</code> ya formalizó esa reducción: Quipu queda como «la prueba», mientras la norma y la autorización viven en ficheros.</td>
+          </tr>
+          <tr>
+            <td><b>Mantenimiento acumulándose sobre apuestas caducadas</b></td>
+            <td><span class="pill p-media">Media</span></td>
+            <td>Capa de diseño, catálogo de entrevista y plantillas suman varios miles de líneas y cero filas en uso, y siguen apareciendo en las fases F4 del plan.</td>
+          </tr>
+          <tr>
+            <td><b>Absorción por los vendors de IDE</b></td>
+            <td><span class="pill p-media">Media</span></td>
+            <td>Riesgo estructural, correctamente identificado por el análisis externo. Se mitiga siendo lo que ellos no quieren ser: el plano de control agnóstico y auditable. No se mitiga añadiendo funcionalidades que ellos también van a tener.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══════════ 12 ══════════ -->
+  <section id="s12">
+    <div class="sec-head"><span class="sec-num">12</span><h2>Conclusión: qué hacer inmediatamente</h2></div>
+
+    <p>
+      La tesis de Quipu no sólo sigue siendo válida: se vuelve más relevante a medida que los
+      agentes pasan de asistentes a ejecutores. En eso el análisis externo tiene toda la razón, y
+      el código lo respalda mejor de lo que él mismo sabía — el motor de Postgres es de una
+      calidad que no se encuentra en el mercado.
+    </p>
+    <p>
+      Pero la pregunta que debe gobernar las próximas fases no es «qué funcionalidades faltan».
+      Es esta: <b>¿qué tiene que ser cierto para que Quipu pueda demostrar que el trabajo de un
+      agente está bien, y no sólo que su expediente está completo?</b> Hoy la respuesta son tres
+      cosas concretas — el perímetro, el alcance como dato y la evidencia observada — y ninguna
+      de las tres está en el roadmap actual.
+    </p>
+
+    <h3>Los cinco pasos de la semana siguiente</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th class="num">#</th><th>Acción</th><th>Por qué primero</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td><b>Hoy:</b> publicar los puertos del compose en <code>127.0.0.1</code> en vez de en todas las interfaces.</td><td>Cambio de una línea que cierra el hueco más grave mientras se diseña la solución real.</td></tr>
+          <tr><td class="num">2</td><td>Escribir <code>PLAN/F-A-execplan.md</code> y sus <code>TAREAS/F-A/</code>.</td><td>El propio paquete lo exige: sin fase abierta, ningún agente tiene alcance pre-aprobado y todo es escalamiento clase C.</td></tr>
+          <tr><td class="num">3</td><td>Registrar una decisión que aplace F2 y cite la medición del 2026-08-28 como evidencia.</td><td>Es exactamente el acto que el método exige antes de cambiar de rumbo — y el registro donde hacerlo es hoy Chasqui, porque Quipu todavía no puede sostenerlo. Esa incomodidad es el argumento a favor del paso 5.</td></tr>
+          <tr><td class="num">4</td><td>Reponer <code>fn_contradiccion_mismo_proyecto</code> con una migración nueva y añadir la comprobación de deriva al CI.</td><td>Barato, y restaura la garantía sobre la que se apoya todo el discurso del producto.</td></tr>
+          <tr><td class="num">5</td><td>Prototipar el runner de evidencia contra <b>un solo comando real</b>.</td><td>La rebanada más pequeña posible de C6. Decide si el enfoque es correcto antes de comprometer un mes, y produce la primera fila de evidencia observada que la base ha visto nunca.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout good">
+      <h4>Lo que no hay que perder de vista</h4>
+      <p>
+        Nada de esto es un rediseño. El core es correcto, está bien construido y hay que
+        conservarlo entero. Lo que esta auditoría propone es <b>terminar el mecanismo en los tres
+        puntos donde hoy se interrumpe</b>, y usar el producto para construirse a sí mismo — que
+        es la única forma de que los huecos los encuentre el equipo y no el cliente. El activo más
+        valioso del ecosistema ya existe: son 348 líneas de bash que verifican de verdad. El
+        siguiente movimiento correcto es meterlas dentro del producto.
+      </p>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<footer class="closing">
+  Auditoría realizada el 2026-09-01 sobre el árbol de trabajo, la base de datos viva
+  (<code>quipu-ent-postgres</code>) y el CI reejecutado. Las afirmaciones marcadas HECHO se
+  comprobaron contra código, esquema desplegado o respuesta HTTP; las marcadas INFERENCIA se
+  derivan de hechos citados; las marcadas RECOMENDACIÓN son decisiones propuestas. El token
+  emitido durante la comprobación del perímetro quedó revocado. No se modificó ningún fichero
+  del producto.
+</footer>
+
+</div>
+
+</body></html>
